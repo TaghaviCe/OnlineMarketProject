@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:title="خانه"
+        android:icon="@drawable/ic_baseline_home_24"
+        />
+    <item
+        android:id="@+id/categoryFragment"
+        android:title="دسته بندی محصولات"
+        android:icon="@drawable/ic_baseline_category_24"
+        />
+
+</menu>

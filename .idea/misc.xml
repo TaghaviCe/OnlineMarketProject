@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/taghavi/AndroidStudioProjects/OnlineMarketProject/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/taghavi/AndroidStudioProjects/OnlineMarketProject/app/src/main/res/layout/activity_splash_screen.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/taghavi/AndroidStudioProjects/OnlineMarketProject/app/src/main/res/layout/category_row_items.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/taghavi/AndroidStudioProjects/OnlineMarketProject/app/src/main/res/layout/fragment_category.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/taghavi/AndroidStudioProjects/OnlineMarketProject/app/src/main/res/layout/fragment_home.xml" value="0.11986479459178367" />
+        <entry key="..\:/Users/taghavi/AndroidStudioProjects/OnlineMarketProject/app/src/main/res/layout/fragment_product.xml" value="0.264" />
+        <entry key="..\:/Users/taghavi/AndroidStudioProjects/OnlineMarketProject/app/src/main/res/layout/prodect_row_items.xml" value="0.264" />
+        <entry key="..\:/Users/taghavi/AndroidStudioProjects/OnlineMarketProject/app/src/main/res/menu/menu_main.xml" value="0.25416666666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

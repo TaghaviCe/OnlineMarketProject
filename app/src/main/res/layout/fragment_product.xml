@@ -8,18 +8,21 @@
             name="description"
             type="String" />
         <variable
+            name="Name"
+            type="String" />
+        <variable
             name="productViewModel"
             type="com.example.onlinemarketproject.viewmodels.ProductPageViewModel" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#FFFF8D"
         tools:context=".fragment.ProductFragment">
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#FCFFFD"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -45,6 +48,25 @@
 
                 <TextView
                     android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="نام محصول"
+                    android:textSize="20dp" />
+                <TextView
+                    android:id="@+id/textViewNameText"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="#FF8A80"
+                    android:text="@{productViewModel.oneProduct.name}"
+                    />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="@color/black" />
+                <TextView
+                    android:id="@+id/textViewName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="مشخصات محصول"

@@ -62,13 +62,13 @@ class HomeFragment : Fragment() {
         viewModel.getPopularList()
         viewModel.getRecentList()
         viewModel.getTopList()
-        attachPopularMoviesOnScrollListener()
-        attachRecentMoviesOnScrollListener()
-        attachTopMoviesOnScrollListener()
+        attachPopularOnScrollListener()
+        attachRecentOnScrollListener()
+        attachTopOnScrollListener()
     }
 
     //
-    private fun attachPopularMoviesOnScrollListener() {
+    private fun attachPopularOnScrollListener() {
         binding.productPopularList.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
@@ -81,7 +81,7 @@ class HomeFragment : Fragment() {
     }
 
     //
-    private fun attachRecentMoviesOnScrollListener() {
+    private fun attachRecentOnScrollListener() {
         binding.productRecentList.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
@@ -93,7 +93,7 @@ class HomeFragment : Fragment() {
 
     }
 
-    private fun attachTopMoviesOnScrollListener() {
+    private fun attachTopOnScrollListener() {
         binding.productBestList.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)

@@ -2,6 +2,8 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
+<!--    app:imageUrl="@{productImageSrc.toString()}"-->
     <data>
 
         <variable
@@ -21,7 +23,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_margin="10dp"
-    android:background="@color/white"
+    android:background="#B9F6CA"
     android:layout_height="match_parent">
 
     <LinearLayout
@@ -36,19 +38,20 @@
             android:layout_weight="1"
             android:layout_marginTop="3dp"
             android:layout_margin="5dp"
-            app:imageUrl="@{productImageSrc.toString()}"
+
             tools:src="@drawable/ic_baseline_insert_photo_24" />
 
         <TextView
             android:id="@+id/product_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
             android:layout_weight="2"
             android:text="@{productName}"
             android:textAlignment="center"
             android:textColor="@color/design_default_color_primary_variant"
-            android:layout_marginTop="50dp"
-            android:textSize="15dp" />
+            android:textSize="30dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/product_slug"
@@ -69,6 +72,6 @@
         android:layout_height="3dp"
         android:layout_marginTop="2dp"
         android:layout_margin="2dp"
-        android:background="#F40D0D" />
+        android:background="#0B7702" />
 </LinearLayout>
 </layout>

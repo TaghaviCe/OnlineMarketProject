@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         //splash screen
-       // supportActionBar?.hide()
+        supportActionBar?.hide()
         val imageView = findViewById<ImageView>(R.id.splash_screen)
         val fragment = findViewById<View>(R.id.fragmentContainerView)
         imageView.alpha=0f
@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
             imageView.visibility=View.GONE
             overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
         }
+        supportActionBar?.show()
 
 
     }

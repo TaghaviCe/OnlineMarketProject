@@ -16,9 +16,9 @@ class RecyclerViewCategoryAdapter :
 
     inner class MainViewHolder( private var binding: CategoryRowItemsBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(category:Category) {
-            binding.productImageSrc= category.images[0].src.toString()
+           // binding.productImageSrc= category.images[0].src.toString()
             binding.productName=category.name
-            binding.slug=category.slug
+           // binding.slug=category.slug
             binding.executePendingBindings()
             //binding.root.setOnClickListener { onProductClick(productItemX.id) }
         }

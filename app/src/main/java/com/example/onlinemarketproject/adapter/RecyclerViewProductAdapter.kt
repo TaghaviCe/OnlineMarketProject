@@ -16,7 +16,7 @@ class RecyclerViewProductAdapter(var onProductClick: showProductDetails) :
 
    inner class MainViewHolder( private var binding: ProdectRowItemsBinding):RecyclerView.ViewHolder(binding.root){
         fun bind(productItemX: productItemX) {
-            binding.productImageSrc= productItemX.images[0].src.toString()
+           // binding.productImageSrc= productItemX.images[0].src.toString()
             binding.productName=productItemX.name
             binding.price=productItemX.price
             binding.executePendingBindings()

@@ -25,11 +25,14 @@ class ApiParameter {
     }
 
     fun getCategory_OPTION():Map<String,String>{
+      //  var page=20
         var BASE_OPTIONS =HashMap<String, String>()
         BASE_OPTIONS.putAll(getBase_OPTION())
-       // BASE_OPTIONS["page"]=page.toString()
+       // BASE_OPTIONS["per_page"]=page.toString()
         return BASE_OPTIONS
     }
+
+
 
 
 

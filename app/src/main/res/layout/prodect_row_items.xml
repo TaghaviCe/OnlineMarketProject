@@ -8,6 +8,8 @@
 <!--            name="Image"-->
 <!--            type="com.example.onlinemarketproject.model.ProductItem" />-->
 <!--    </data>-->
+
+    <!--            app:imageUrl="@{productImageSrc.toString()}"-->
 <data>
 
     <variable
@@ -44,8 +46,8 @@
             android:layout_weight="1"
             android:layout_marginTop="3dp"
             android:layout_margin="5dp"
-            app:imageUrl="@{productImageSrc.toString()}"
-            tools:src="@drawable/ic_baseline_insert_photo_24" />
+
+            tools:src="@drawable/ic_baseline_shopping_bag_24" />
 
         <TextView
             android:id="@+id/product_title"
@@ -66,7 +68,7 @@
             android:layout_weight="1"
             android:text="@{price}"
             android:textAlignment="textEnd"
-            android:textSize="15dp"
+            android:textSize="12sp"
             android:textColor="#049A18"
             android:textStyle="bold" />
 

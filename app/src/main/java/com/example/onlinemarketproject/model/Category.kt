@@ -10,7 +10,7 @@ data class Category(
     val name: String,
     @Json(name = "slug")
     val slug: String,
-//    @Json(name = "images")
-//    val images: List<Image>,
+    @Json(name = "images")
+    val images: List<Image>?,
 
     )

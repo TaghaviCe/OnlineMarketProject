@@ -12,6 +12,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 import retrofit2.http.QueryMap
 
 val logger = HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BASIC }
@@ -71,6 +72,14 @@ interface ApiService {
     suspend fun getCategoryList(
         @QueryMap category: Map<String, String> = apiParameter.getCategory_OPTION()
         ): List<Category>
+
+    @GET("products")
+    suspend fun getProductsOfCategory(
+        @QueryMap option:Map<String, String> = apiParameter.getBase_OPTION(),
+        @Query("per_page") perPage:Int=20,
+        @Query("category") categoryId:String
+
+    ):List<productItemX>
 }
 object ShopApi {
     val retrofitService: ApiService by lazy {

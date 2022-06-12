@@ -6,10 +6,10 @@ import com.example.onlinemarketproject.network.ApiParameter
 import com.example.onlinemarketproject.network.ShopApi
 
 class CategoryRepository {
-    suspend fun getAllItems():List<Category> {
+    suspend fun getAllItems(page:Int,categoryId:String):List<Category> {
         var par= ApiParameter()
-        return ShopApi.retrofitService.getCategoryList()
-
-
+        return ShopApi.retrofitService.getCategoryList(
+            par.getCategory_Items(page,categoryId)
+        )
     }
 }

@@ -3,6 +3,7 @@ package com.example.onlinemarketproject.adapter
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 //import com.bumptech.glide.Glide
 
 import com.example.onlinemarketproject.model.Category
@@ -45,13 +46,13 @@ fun bindRecyclerViewCategory(recyclerView: RecyclerView, data: List<Category>?) 
  * Uses the Coil library to load an image by URL into an [ImageView]
  */
 
-//@BindingAdapter("imageUrl")
-//fun bindImage(imgView: ImageView, imgUrl: String?) {
-//    imgUrl?.let {
-//        Glide.with(imgView)
-//            .load("$imgUrl")
-//            .placeholder(android.R.drawable.progress_indeterminate_horizontal)
-//            .error(android.R.drawable.stat_notify_error)
-//            .into(imgView)
-//    }
-//}
+@BindingAdapter("imageUrl")
+fun bindImage(imgView: ImageView, imgUrl: String?) {
+    imgUrl?.let {
+        Glide.with(imgView)
+            .load("$imgUrl")
+            .placeholder(android.R.drawable.progress_indeterminate_horizontal)
+            .error(android.R.drawable.stat_notify_error)
+            .into(imgView)
+   }
+}

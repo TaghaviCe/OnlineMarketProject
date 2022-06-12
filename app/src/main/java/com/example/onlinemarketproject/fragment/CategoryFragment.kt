@@ -5,8 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.onlinemarketproject.R
 import com.example.onlinemarketproject.adapter.RecyclerViewCategoryAdapter
 import com.example.onlinemarketproject.databinding.FragmentCategoryBinding
 import com.example.onlinemarketproject.viewmodels.CategoryViewModel
@@ -35,8 +38,12 @@ class CategoryFragment : Fragment() {
         binding.lifecycleOwner = this.viewLifecycleOwner
          binding.categoryViewModel = viewModel
 
-        binding.categoryList.adapter=  RecyclerViewCategoryAdapter()
+        binding.categoryList.adapter=  RecyclerViewCategoryAdapter{id -> onProductListItemClick(id)}
         setlistProduct()
+    }
+    private fun onProductListItemClick(id: Int) {
+        val bundle = bundleOf(product to id)
+        findNavController().navigate(R.id.action_categoryFragment_to_productListFragment, bundle)
     }
 
     private fun setlistProduct() {

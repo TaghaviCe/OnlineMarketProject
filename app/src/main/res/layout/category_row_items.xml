@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-<!--    app:imageUrl="@{productImageSrc.toString()}"-->
+<!--   -->
     <data>
 
         <variable
@@ -38,7 +38,7 @@
             android:layout_weight="1"
             android:layout_marginTop="3dp"
             android:layout_margin="5dp"
-
+            app:imageUrl="@{productImageSrc.toString()}"
             tools:src="@drawable/ic_baseline_insert_photo_24" />
 
         <TextView

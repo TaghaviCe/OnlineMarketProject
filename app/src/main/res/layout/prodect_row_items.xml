@@ -3,11 +3,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-<!--    <data>-->
-<!--        <variable-->
-<!--            name="Image"-->
-<!--            type="com.example.onlinemarketproject.model.ProductItem" />-->
-<!--    </data>-->
+
 
     <!--            app:imageUrl="@{productImageSrc.toString()}"-->
 <data>
@@ -24,12 +20,13 @@
         name="price"
         type="String" />
 
+
+
 </data>
 
     <androidx.cardview.widget.CardView
         android:layout_width="200dp"
         android:layout_height="300dp"
-        tools:context=".view.fragment.ProductListFragment"
         android:layout_margin="2dp"
         android:padding="8dp">
         <RelativeLayout
@@ -51,7 +48,8 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
-                android:src="@{}" />
+                app:imageUrl="@{productImageSrc.toString()}"
+                android:src="@drawable/ic_baseline_home_24" />
 
             <TextView
                 android:id="@+id/title_product"

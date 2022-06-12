@@ -49,7 +49,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/product_popular_list"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:orientation="horizontal"
@@ -71,7 +71,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/product_recent_list"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:orientation="horizontal"
@@ -92,7 +92,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/product_best_list"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:orientation="horizontal"

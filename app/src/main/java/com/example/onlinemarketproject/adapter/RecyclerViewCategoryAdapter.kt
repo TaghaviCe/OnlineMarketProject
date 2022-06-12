@@ -7,20 +7,19 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.onlinemarketproject.databinding.CategoryRowItemsBinding
 import com.example.onlinemarketproject.model.Category
+import com.example.onlinemarketproject.model.productItemX
 
-
-
-
-class RecyclerViewCategoryAdapter :
+typealias showProduct= (Int) -> Unit
+class RecyclerViewCategoryAdapter(var onProductListClick: showProduct) :
     ListAdapter<Category, RecyclerViewCategoryAdapter.MainViewHolder>(DiffCallback) {
 
     inner class MainViewHolder( private var binding: CategoryRowItemsBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(category:Category) {
-           // binding.productImageSrc= category.images[0].src.toString()
+            binding.productImageSrc= category.images?.get(0)?.src.toString()
             binding.productName=category.name
-           // binding.slug=category.slug
+            binding.slug=category.slug
             binding.executePendingBindings()
-            //binding.root.setOnClickListener { onProductClick(productItemX.id) }
+            binding.root.setOnClickListener { onProductListClick(category.id) }
         }
 
     }

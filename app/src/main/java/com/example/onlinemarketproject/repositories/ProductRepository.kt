@@ -3,6 +3,7 @@ package com.example.onlinemarketproject.repositories
 
 import com.example.onlinemarketproject.model.productItemX
 import com.example.onlinemarketproject.network.ApiParameter
+import com.example.onlinemarketproject.network.ApiService
 import com.example.onlinemarketproject.network.ShopApi
 import retrofit2.Call
 
@@ -34,6 +35,16 @@ class ProductRepository() {
         return ShopApi.retrofitService.getPopularItems(par.getProduct_OPTION(
             par.TOP
         ))
+
+    }
+
+
+
+    suspend fun getCategoryOption(page:Int,categoryId:String):List<productItemX>{
+        var par=ApiParameter()
+        return ShopApi.retrofitService.getProductsOfCategory(
+            par.getCategory_Items(page,categoryId)
+        )
 
     }
 

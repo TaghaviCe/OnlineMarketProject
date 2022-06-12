@@ -5,4 +5,6 @@
     <string name="recent">آخرین محصولات</string>
     <string name="best">بهترين محصولات</string>
     <string name="popular">پربازدید ترین محصولات</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

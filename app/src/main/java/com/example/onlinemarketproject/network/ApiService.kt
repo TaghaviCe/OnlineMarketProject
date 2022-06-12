@@ -75,9 +75,7 @@ interface ApiService {
 
     @GET("products")
     suspend fun getProductsOfCategory(
-        @QueryMap option:Map<String, String> = apiParameter.getBase_OPTION(),
-        @Query("per_page") perPage:Int=20,
-        @Query("category") categoryId:String
+        @QueryMap option:Map<String, String>
 
     ):List<productItemX>
 }

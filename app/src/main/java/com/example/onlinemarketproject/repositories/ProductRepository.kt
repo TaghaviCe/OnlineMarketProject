@@ -48,5 +48,12 @@ class ProductRepository() {
 
     }
 
+    suspend fun getSearchItem(query:String,categoryId:String):List<productItemX>{
+        var par=ApiParameter()
+        return ShopApi.retrofitService.listProductItems(
+            par.getSearchOption(query,categoryId)
+        )
+    }
+
 
 }

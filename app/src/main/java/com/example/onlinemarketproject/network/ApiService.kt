@@ -31,24 +31,6 @@ private val moshi = Moshi.Builder()
         .client(client)
     .build()
 
-//fun getRetrofitInstance(): Retrofit {
-//    return Retrofit.Builder()
-//        .baseUrl(apiParameter.BASE_URL)
-//        .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
-//        .build()
-//}
-//val retrofitData = retrofit.loginUser(LoginRequest(amka,password))
-
-//data class LoginRequest(
-//    val amka: String, val password: String
-//)
-
-//data class LoginResponse(
-//    @Json(name = "status")
-//    val status: String,
-//    @Json(name = "Token")
-//    val token: String
-//)
 interface ApiService {
     @GET("products/")
     suspend fun listProductItems(
@@ -78,7 +60,7 @@ interface ApiService {
     ):List<productItemX>
 
     @POST
-   suspend fun createCustomer(
+    suspend fun createCustomer(
         @Url  url:String,
         @Body  customer: Customer,
         @QueryMap category: Map<String, String> = apiParameter.getCategory_OPTION()

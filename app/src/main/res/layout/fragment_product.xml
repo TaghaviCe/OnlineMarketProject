@@ -2,7 +2,7 @@
 <layout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android">
-<!--    app:imageUrl="@{productViewModel.oneProduct.images[0].src}"-->
+<!--   "-->
     <data>
         <variable
             name="description"
@@ -17,7 +17,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFFF8D"
+        android:background="#FFFFFF"
         tools:context=".fragment.ProductFragment">
 
         <ScrollView
@@ -38,7 +38,7 @@
                     android:id="@+id/imageView"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-
+                    app:imageUrl="@{productViewModel.oneProduct.images[0].src}"
                     tools:src="@drawable/ic_baseline_shopping_bag_24" />
 
                 <View

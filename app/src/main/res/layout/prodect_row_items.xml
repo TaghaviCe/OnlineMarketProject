@@ -26,12 +26,12 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="200dp"
-        android:layout_height="300dp"
-        android:layout_margin="2dp"
+        android:layout_height="400dp"
+        android:layout_margin="10dp"
         android:padding="8dp">
 
         <LinearLayout
-            android:layout_width="110dp"
+            android:layout_width="200dp"
             android:layout_height="match_parent"
             android:orientation="vertical">
 

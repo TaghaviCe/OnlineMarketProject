@@ -42,7 +42,7 @@ class ApiParameter {
         return BASE_OPTIONS
     }
 
-    fun getSearchOption(searchQuery:String,categoryId:String):Map<String, String>{
+   suspend fun getSearchOption(searchQuery:String,categoryId:String):Map<String, String>{
         var BASE_OPTIONS = HashMap<String, String>()
         BASE_OPTIONS.putAll(getBase_OPTION())
         BASE_OPTIONS["search"]=searchQuery

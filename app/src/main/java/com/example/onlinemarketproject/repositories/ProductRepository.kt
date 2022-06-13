@@ -56,4 +56,19 @@ class ProductRepository() {
     }
 
 
+    suspend fun getCheapestProducts(page:Int,categoryId:String):List<productItemX>{
+        var par=ApiParameter()
+        return ShopApi.retrofitService.listProductItems(
+            par.getCheapestOption(page,categoryId)
+        )
+
+    }
+
+    suspend fun getExpensiveProducts(page:Int,categoryId: String):List<productItemX>{
+        var par=ApiParameter()
+        return ShopApi.retrofitService.listProductItems(
+            par.getExpensiveOption(page,categoryId)
+        )
+    }
+
 }

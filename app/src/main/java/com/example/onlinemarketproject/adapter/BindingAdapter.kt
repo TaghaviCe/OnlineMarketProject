@@ -51,6 +51,8 @@ fun bindImage(imgView: ImageView, imgUrl: String?) {
     imgUrl?.let {
         Glide.with(imgView)
             .load("$imgUrl")
+            .override(400,400)
+            .centerCrop()
             .placeholder(android.R.drawable.progress_indeterminate_horizontal)
             .error(android.R.drawable.stat_notify_error)
             .into(imgView)

@@ -2,6 +2,7 @@ package com.example.onlinemarketproject.network
 
 
 import com.example.onlinemarketproject.model.Category
+import com.example.onlinemarketproject.model.Customer
 import com.example.onlinemarketproject.model.productItemX
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -10,10 +11,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import retrofit2.http.GET
-import retrofit2.http.Path
-import retrofit2.http.Query
-import retrofit2.http.QueryMap
+import retrofit2.http.*
 
 val logger = HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BASIC }
 
@@ -78,6 +76,19 @@ interface ApiService {
         @QueryMap option:Map<String, String>
 
     ):List<productItemX>
+
+    @POST
+   suspend fun createCustomer(
+        @Url  url:String,
+        @Body  customer: Customer,
+        @QueryMap category: Map<String, String> = apiParameter.getCategory_OPTION()
+    ):Customer
+
+    @GET("customers")
+    suspend fun getCustomer(
+        @QueryMap category: Map<String, String> = apiParameter.getCategory_OPTION()
+    ):List<Customer>
+
 }
 object ShopApi {
     val retrofitService: ApiService by lazy {

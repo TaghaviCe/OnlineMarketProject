@@ -42,6 +42,41 @@ class ApiParameter {
         return BASE_OPTIONS
     }
 
+    fun getSearchOption(searchQuery:String,categoryId:String):Map<String, String>{
+        var BASE_OPTIONS = HashMap<String, String>()
+        BASE_OPTIONS.putAll(getBase_OPTION())
+        BASE_OPTIONS["search"]=searchQuery
+        BASE_OPTIONS["category"]=categoryId
+        return BASE_OPTIONS
+    }
+
+    fun getCheapestOption(page:Int,categoryId:String):Map<String, String>{
+        var BASE_OPTIONS = HashMap<String, String>()
+        BASE_OPTIONS.putAll(getBase_OPTION())
+        BASE_OPTIONS["orderby"]=PRICE
+        BASE_OPTIONS["per_page"]=page.toString()
+        BASE_OPTIONS["category"]=categoryId
+        BASE_OPTIONS["order"]="asc"
+        return BASE_OPTIONS
+    }
+
+    fun getExpensiveOption(page:Int,categoryId:String):Map<String, String>{
+        var BASE_OPTIONS = HashMap<String, String>()
+        BASE_OPTIONS.putAll(getBase_OPTION())
+        BASE_OPTIONS["orderby"]=PRICE
+        BASE_OPTIONS["per_page"]=page.toString()
+        BASE_OPTIONS["category"]=categoryId
+        BASE_OPTIONS["order"]="asc"
+        return BASE_OPTIONS
+    }
+
+    fun getCustomer(email:String):Map<String, String>{
+        var BASE_OPTIONS = HashMap<String, String>()
+        BASE_OPTIONS.putAll(getBase_OPTION())
+        BASE_OPTIONS["email"]=email
+        return BASE_OPTIONS
+    }
+
     /*
      productOptions.put("page", String.valueOf(page));
         productOptions.put("category", String.valueOf(categoryId));

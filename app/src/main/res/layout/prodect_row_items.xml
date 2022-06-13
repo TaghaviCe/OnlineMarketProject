@@ -30,7 +30,7 @@
         android:layout_margin="10dp"
         android:padding="8dp">
         <View
-            android:layout_width="2dp"
+            android:layout_width="9dp"
             android:layout_height="match_parent"
             android:background="#FF8A80"
             />

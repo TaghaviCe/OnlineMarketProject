@@ -20,7 +20,7 @@ import java.util.Locale.filter
 class ProductListFragment : Fragment() {
     private val viewModel: ProductListViewModel by viewModels()
     private lateinit var binding: FragmentProductListBinding
-    private var bundle:Int=0
+    private var mybundle:Int=0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -42,15 +42,15 @@ class ProductListFragment : Fragment() {
 
         binding.productRecentList.adapter =
             RecyclerViewProductAdapter { id -> onProductItemClick(id) }
-
-        bundle=requireArguments().getInt(product, 0)
+        //get products list with id
+        mybundle=requireArguments().getInt(product, 0)
         setInformationProductList()
 
         // listening to search query text change
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 if (query != null) {
-                    viewModel.getSearchItem(query,bundle.toString())
+                    viewModel.getSearchItem(query,mybundle.toString())
                     attachItemsOnScrollListenerTwo(query)
                 }
                 return false
@@ -62,6 +62,13 @@ class ProductListFragment : Fragment() {
             }
         })
 
+        var stateSort=viewModel.getSortValue()
+        if(stateSort==true){
+            val bundle =Bundle()
+            bundle.putInt("categoryId",mybundle)
+            findNavController().navigate(R.id.action_productListFragment_to_sortListFragment,bundle)
+        }
+
     }
 
 
@@ -69,7 +76,7 @@ class ProductListFragment : Fragment() {
 
 
     private fun setInformationProductList() {
-        viewModel.getCategoryProductListItem(20,bundle.toString())
+        viewModel.getCategoryProductListItem(20,mybundle.toString())
         attachItemsOnScrollListener()
     }
 
@@ -83,7 +90,7 @@ class ProductListFragment : Fragment() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
                 if (!recyclerView.canScrollVertically(1) && dy != 0) {
-                    viewModel.getCategoryProductListItem(20,bundle.toString())
+                    viewModel.getCategoryProductListItem(20,mybundle.toString())
 
                 }
             }
@@ -96,7 +103,7 @@ class ProductListFragment : Fragment() {
                 super.onScrolled(recyclerView, dx, dy)
                 if (!recyclerView.canScrollVertically(1) && dy != 0) {
 
-                    viewModel.getSearchItem(query,bundle.toString())
+                    viewModel.getSearchItem(query,mybundle.toString())
                 }
             }
         })

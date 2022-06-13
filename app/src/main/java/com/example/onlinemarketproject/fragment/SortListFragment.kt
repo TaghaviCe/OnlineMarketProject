@@ -22,5 +22,9 @@ class SortListFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_sort_list, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        var mybundle=requireArguments().getInt("categoryId", 0)
+
+    }
 
 }

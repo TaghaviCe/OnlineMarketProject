@@ -12,7 +12,8 @@ class ProductListViewModel:ViewModel() {
     var item= MutableLiveData<List<productItemX>>()
     var status= MutableLiveData<Status>()
     var sortClicked= MutableLiveData<Boolean>()
-    var searchResultList=MutableLiveData<List<productItemX>>()
+    //var searchResultList=MutableLiveData<List<productItemX>>()
+
 
 
     fun getCategoryProductListItem(page:Int,categoryId:String) {
@@ -30,9 +31,17 @@ class ProductListViewModel:ViewModel() {
             }
         }
     }
+
+
     fun sortIsClicked(){
         sortClicked.value=true
     }
+
+    fun getSortValue(): Boolean? {
+        return sortClicked.value
+
+    }
+
 
    fun getSearchItem(query:String,categoryId:String){
         val productrepository= ProductRepository()

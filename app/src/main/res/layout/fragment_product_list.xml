@@ -29,24 +29,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <TextView
+        <Button
             android:id="@+id/filters"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
+            android:layout_margin="2dp"
             android:text="فیلتر ها"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
 
-        <TextView
+        <Button
             android:id="@+id/tv_sort"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_margin="2dp"
             android:gravity="center"
-           android:onClick="@{() -> ProductListViewModel.sortIsClicked()}"
             android:text="مرتب سازی "
             android:textColor="@color/black"
             android:textSize="18sp"

@@ -17,6 +17,18 @@ fun bindRecyclerView(recyclerView: RecyclerView, data: List<productItemX>?) {
     adapter.submitList(data)
 }
 
+@BindingAdapter("listDataExpensive")
+fun bindRecyclerViewExpensive(recyclerView: RecyclerView, data: List<productItemX>?) {
+    val adapter = recyclerView.adapter as RecyclerViewProductAdapter
+    adapter.submitList(data)
+}
+@BindingAdapter("listDataCheap")
+fun bindRecyclerViewCheap(recyclerView: RecyclerView, data: List<productItemX>?) {
+    val adapter = recyclerView.adapter as RecyclerViewProductAdapter
+    adapter.submitList(data)
+}
+
+
 @BindingAdapter("listDataPopular")
 fun bindRecyclerViewPopular(recyclerView: RecyclerView, data: List<productItemX>?) {
     val adapter = recyclerView.adapter as RecyclerViewProductAdapter
@@ -38,7 +50,6 @@ fun bindRecyclerViewCategory(recyclerView: RecyclerView, data: List<Category>?) 
     val adapter = recyclerView.adapter as RecyclerViewCategoryAdapter
     adapter.submitList(data)
 }
-
 
 
 

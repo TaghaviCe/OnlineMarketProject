@@ -10,11 +10,10 @@ import kotlinx.coroutines.launch
 
 class SortListViewModel: ViewModel() {
 
-    private var mRepository: ProductRepository? = null
+
     private var mCheapestItem=MutableLiveData<List<productItemX>>()
     private var mExpensiveItem=MutableLiveData<List<productItemX>>()
-    private var mPerPage: LiveData<Int>? = null
-    private var mCategoryItemId: LiveData<Int>? = null
+   // private var itemListSelected= MutableLiveData<List<productItemX>>()
     var status= MutableLiveData<Status>()
 
 //    fun SortListViewModel() {
@@ -65,6 +64,8 @@ class SortListViewModel: ViewModel() {
             }
         }
     }
+
+
 
 //    fun newestClicked() {
 //        mRepository.fetchNewestProducts(mPerPage!!.value, mCategoryItemId!!.value)

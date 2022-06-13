@@ -62,14 +62,16 @@ class ProductListFragment : Fragment() {
             }
         })
 
-        var stateSort=viewModel.getSortValue()
-        if(stateSort==true){
-            val bundle =Bundle()
-            bundle.putInt("categoryId",mybundle)
-            findNavController().navigate(R.id.action_productListFragment_to_sortListFragment,bundle)
+        //var stateSort=viewModel.getSortValue()
+        binding.tvSort.setOnClickListener {
+                val bundle =Bundle()
+                bundle.putInt("categoryId",mybundle)
+                findNavController().navigate(R.id.action_productListFragment_to_sortListFragment,bundle)
+            }
         }
 
-    }
+
+
 
 
 /////////

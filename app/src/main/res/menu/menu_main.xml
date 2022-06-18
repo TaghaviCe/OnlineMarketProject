@@ -10,5 +10,11 @@
         android:title="دسته بندی محصولات"
         android:icon="@drawable/ic_baseline_category_24"
         />
+    <item
+        android:id="@+id/cartFragment"
+        android:title="سبد خرید"
+        android:icon="@drawable/ic_baseline_category_24"
+        />
+
 
 </menu>

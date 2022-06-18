@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.onlinemarketproject.R
 import com.example.onlinemarketproject.adapter.RecyclerViewProductAdapter
+import com.example.onlinemarketproject.adapter.sortRecyclerView
 import com.example.onlinemarketproject.databinding.FragmentProductListBinding
 import com.example.onlinemarketproject.databinding.FragmentSortListBinding
 import com.example.onlinemarketproject.viewmodels.ProductListViewModel
@@ -38,8 +39,10 @@ class SortListFragment : Fragment() {
         binding.lifecycleOwner = this.viewLifecycleOwner
         binding.sortViewModel= viewModel
 
-        binding.rvCheap.adapter =
-            RecyclerViewProductAdapter { id -> onProductItemClick(id) }
+        binding.rvCheap.adapter =sortRecyclerView()
+        viewModel.mCheapestItem.observe(viewLifecycleOwner){
+
+        }
         binding.rvExpensive.adapter=
             RecyclerViewProductAdapter{ id -> onProductItemClick(id) }
 
@@ -59,6 +62,18 @@ class SortListFragment : Fragment() {
         attachCheapestItemsOnScrollListener(mybund)
     }
 
+    private fun attachCheapestItemsOnScrollListener(mybund:Int) {
+        binding.rvCheap.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                if (!recyclerView.canScrollVertically(1) && dy != 0) {
+                    viewModel.cheapestClicked(mybund.toString())
+                }
+            }
+        })
+    }
+
+
     private fun onProductItemClick(id: Int) {
         val bundle = bundleOf(product to id)
         findNavController().navigate(R.id.action_productListFragment_to_productFragment, bundle)
@@ -76,16 +91,6 @@ class SortListFragment : Fragment() {
         })
     }
 
-    private fun attachCheapestItemsOnScrollListener(mybund:Int) {
-        binding.rvCheap.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-                super.onScrolled(recyclerView, dx, dy)
-                if (!recyclerView.canScrollVertically(1) && dy != 0) {
-                    viewModel.cheapestClicked(mybund.toString())
-                }
-            }
-        })
-    }
 
 
 

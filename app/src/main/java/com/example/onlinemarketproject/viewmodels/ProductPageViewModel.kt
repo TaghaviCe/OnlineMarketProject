@@ -26,5 +26,20 @@ class ProductPageViewModel:ViewModel() {
         }
 
     }
+//    fun getProductItem(id: Int): productItemX? {
+//        val productRepository= ProductRepository()
+//        viewModelScope.launch {
+//            status.value = Status.LOADING
+//            try {
+//                oneProduct.value=productRepository.getProductWithId(id)
+//                status.value = Status.DONE
+//
+//            } catch (e: Exception) {
+//                status.value=Status.ERROR
+//
+//            }
+//        }
+//        return oneProduct.value
+//    }
 
 }

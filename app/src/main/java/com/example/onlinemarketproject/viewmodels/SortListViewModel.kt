@@ -11,17 +11,10 @@ import kotlinx.coroutines.launch
 class SortListViewModel: ViewModel() {
 
 
-    private var mCheapestItem=MutableLiveData<List<productItemX>>()
-    private var mExpensiveItem=MutableLiveData<List<productItemX>>()
+     var mCheapestItem=MutableLiveData<List<productItemX>>()
+    var mExpensiveItem=MutableLiveData<List<productItemX>>()
    // private var itemListSelected= MutableLiveData<List<productItemX>>()
     var status= MutableLiveData<Status>()
-
-//    fun SortListViewModel() {
-//        mRepository = ProductRepository.getInstance()
-//        mCheapestItem = mRepository.getProductListLiveData()
-//        mCategoryItemId = mRepository.getCategoryItemId()
-//        mPerPage = mRepository.getPerPage()
-//    }
 
     fun getCheapestItem(): List<productItemX>? {
         return mCheapestItem.value
@@ -29,11 +22,6 @@ class SortListViewModel: ViewModel() {
     fun getExpensiveItem(): List<productItemX>? {
         return mExpensiveItem.value
     }
-
-
-
-
-
 
     fun cheapestClicked(categoryId: String) {
         val productrepository= ProductRepository()

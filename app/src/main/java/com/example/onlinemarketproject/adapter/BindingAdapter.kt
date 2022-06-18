@@ -16,6 +16,11 @@ fun bindRecyclerView(recyclerView: RecyclerView, data: List<productItemX>?) {
     val adapter = recyclerView.adapter as RecyclerViewProductAdapter
     adapter.submitList(data)
 }
+@BindingAdapter("listCartData")
+fun bindRecyclerViewCart(recyclerView: RecyclerView, data: List<productItemX>?) {
+    val adapter = recyclerView.adapter as RecyclerViewCardAdapter
+    adapter.submitList(data)
+}
 
 @BindingAdapter("listDataExpensive")
 fun bindRecyclerViewExpensive(recyclerView: RecyclerView, data: List<productItemX>?) {

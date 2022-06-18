@@ -9,6 +9,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.onlinemarketproject.R
+import com.example.onlinemarketproject.R.*
 import com.example.onlinemarketproject.adapter.RecyclerViewProductAdapter
 import com.example.onlinemarketproject.databinding.FragmentHomeBinding
 import com.example.onlinemarketproject.viewmodels.HomeViewModel
@@ -45,7 +46,9 @@ class HomeFragment : Fragment() {
             RecyclerViewProductAdapter { id -> onProductItemClick(id) }
         binding.productBestList.adapter =
             RecyclerViewProductAdapter { id -> onProductItemClick(id) }
-
+         binding.button3.setOnClickListener {
+             findNavController().navigate(R.id.action_homeFragment_to_cartFragment)
+         }
 
         setlistProduct()
 
@@ -118,6 +121,7 @@ class HomeFragment : Fragment() {
                     findNavController().navigate(R.id.action_homeFragment_to_categoryFragment)
                     true
                 }
+
               else-> return super.onOptionsItemSelected(item)
             }
         }

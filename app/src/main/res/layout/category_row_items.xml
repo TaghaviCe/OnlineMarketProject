@@ -14,16 +14,14 @@
             name="productImageSrc"
             type="String" />
 
-        <variable
-            name="slug"
-            type="String" />
 
     </data>
+
 <LinearLayout
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_margin="10dp"
-    android:background="#B9F6CA"
+    android:background="#FBB8B2"
     android:layout_height="match_parent">
 
     <LinearLayout
@@ -53,17 +51,6 @@
             android:textSize="30dp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/product_slug"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="170dp"
-            android:layout_weight="1"
-            android:text="@{slug}"
-            android:textAlignment="textEnd"
-            android:textSize="15dp"
-            android:textColor="#049A18"
-            android:textStyle="bold" />
 
     </LinearLayout>
 

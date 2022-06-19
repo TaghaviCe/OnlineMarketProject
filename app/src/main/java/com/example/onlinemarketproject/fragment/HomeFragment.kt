@@ -46,9 +46,7 @@ class HomeFragment : Fragment() {
             RecyclerViewProductAdapter { id -> onProductItemClick(id) }
         binding.productBestList.adapter =
             RecyclerViewProductAdapter { id -> onProductItemClick(id) }
-         binding.button3.setOnClickListener {
-             findNavController().navigate(R.id.action_homeFragment_to_cartFragment)
-         }
+
 
         setlistProduct()
 
@@ -121,6 +119,10 @@ class HomeFragment : Fragment() {
                     findNavController().navigate(R.id.action_homeFragment_to_categoryFragment)
                     true
                 }
+              R.id.cartFragment->{
+                  findNavController().navigate(R.id.action_homeFragment_to_cartFragment)
+                  true
+              }
 
               else-> return super.onOptionsItemSelected(item)
             }

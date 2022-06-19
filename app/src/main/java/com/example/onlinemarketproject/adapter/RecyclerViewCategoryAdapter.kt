@@ -17,7 +17,6 @@ class RecyclerViewCategoryAdapter(var onProductListClick: showProduct) :
         fun bind(category:Category) {
             binding.productImageSrc= category.images?.get(0)?.src.toString()
             binding.productName=category.name
-            binding.slug=category.slug
             binding.executePendingBindings()
             binding.root.setOnClickListener { onProductListClick(category.id) }
         }

@@ -48,6 +48,7 @@ class HomeFragment : Fragment() {
             RecyclerViewProductAdapter { id -> onProductItemClick(id) }
 
 
+
         setlistProduct()
 
     }
@@ -105,28 +106,28 @@ class HomeFragment : Fragment() {
         })
 
     }
+//
+//    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+//        super.onCreateOptionsMenu(menu, inflater)
+//        inflater.inflate(R.menu.menu_main, menu)
+//
+//    }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.menu_main, menu)
-
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
-          return  when (item.itemId) {
-                R.id.categoryFragment -> {
-                    findNavController().navigate(R.id.action_homeFragment_to_categoryFragment)
-                    true
-                }
-              R.id.cartFragment->{
-                  findNavController().navigate(R.id.action_homeFragment_to_cartFragment)
-                  true
-              }
-
-              else-> return super.onOptionsItemSelected(item)
-            }
-        }
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//
+//          return  when (item.itemId) {
+//                R.id.categoryFragment -> {
+//                    findNavController().navigate(R.id.action_homeFragment_to_categoryFragment)
+//                    true
+//                }
+//              R.id.cartFragment->{
+//                  findNavController().navigate(R.id.action_homeFragment_to_cartFragment)
+//                  true
+//              }
+//
+//              else-> return super.onOptionsItemSelected(item)
+//            }
+//        }
 
 
 }

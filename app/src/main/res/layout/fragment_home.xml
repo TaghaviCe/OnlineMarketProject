@@ -13,10 +13,12 @@
     tools:context=".fragment.HomeFragment">
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FF8A80"
         android:layout_margin="6dp"
+        android:layout_marginBottom="6dp"
+        android:background="#FF8A80"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,8 +54,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:scrollbars="vertical"
                 android:orientation="horizontal"
+                android:scrollbars="vertical"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:listDataPopular="@{homeViewModel.listPopular}"
                 tools:listitem="@layout/prodect_row_items" />
@@ -75,8 +77,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:scrollbars="vertical"
                 android:orientation="horizontal"
+                android:scrollbars="vertical"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:listDataRecent="@{homeViewModel.listReacent}"
                 tools:listitem="@layout/prodect_row_items" />
@@ -97,8 +99,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:scrollbars="vertical"
                 android:orientation="horizontal"
+                android:scrollbars="vertical"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:listDataTop="@{homeViewModel.listTop}"
                 tools:listitem="@layout/prodect_row_items" />

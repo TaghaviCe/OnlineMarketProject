@@ -7,8 +7,12 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
+import android.widget.LinearLayout
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,13 +22,21 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.hide()
         val imageView = findViewById<ImageView>(R.id.splash_screen)
         val fragment = findViewById<View>(R.id.fragmentContainerView)
+        val navigationBottom=findViewById<BottomNavigationView>(R.id.bottom_navigatin_view)
+
         imageView.alpha=0f
         imageView.animate().setDuration(1500).alpha(1f).withEndAction {
             fragment.visibility=View.VISIBLE
             imageView.visibility=View.GONE
+            navigationBottom.visibility=View.VISIBLE
+            val navController = findNavController(R.id.fragmentContainerView)
+            navigationBottom.setupWithNavController(navController)
             overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
         }
-        supportActionBar?.show()
+
+
+
+       // supportActionBar?.show()
 
 
     }

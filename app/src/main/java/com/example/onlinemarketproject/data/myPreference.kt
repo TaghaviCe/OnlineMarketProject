@@ -2,19 +2,25 @@ package com.example.onlinemarketproject.data
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.widget.Toast
+
+
+
 
 object myPreference {
 
    lateinit var pref:SharedPreferences
+   lateinit var editor: SharedPreferences.Editor
 
 
         fun init(context: Context) {
             pref = context.getSharedPreferences("mycardlist", Context.MODE_PRIVATE)
+            editor = pref.edit()
         }
 
     fun addIdItem(id:Int){
-        val editor = pref.edit()
-        editor.putInt("id",id)
+
+        editor.putInt("$id",id)
         editor.apply()
     }
 
@@ -23,6 +29,17 @@ object myPreference {
         return myId
 
     }
+
+//    fun adding(id:Int){
+//
+//        val set = pref.getStringSet("yourKey", HashSet())
+//        set!!.add(id)
+//
+//        editor.putStringSet("yourKey", set)
+//        editor.commit()
+//
+//
+//    }
 }
 
 /*

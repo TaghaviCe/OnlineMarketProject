@@ -19,7 +19,7 @@ class CartViewModel:ViewModel() {
        val productRepository= ProductRepository()
     viewModelScope.launch {
         try {
-            oneProduct.value = listOf(productRepository.getProductWithId(mylist))
+            oneProduct.value = listOf(productRepository.getProductWithId(mylist.toInt()))
             status.value = Status.DONE
 
         } catch (e: Exception) {

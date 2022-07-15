@@ -12,6 +12,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.RecyclerView
 import com.example.onlinemarketproject.adapter.RecyclerViewCardAdapter
 import com.example.onlinemarketproject.databinding.FragmentCartBinding
+import com.example.onlinemarketproject.model.LineItems
 import com.example.onlinemarketproject.model.orderItem
 import com.example.onlinemarketproject.viewmodels.CartViewModel
 import com.google.gson.Gson
@@ -47,14 +48,14 @@ class CartFragment : Fragment() {
         attachItemsOnScrollListener()
 
     }
-    fun getListItem():MutableList<orderItem>?{
+    fun getListItem():List<LineItems>?{
         var sharedPreferences:SharedPreferences=requireActivity().getSharedPreferences("cartItemList",Context.MODE_PRIVATE)
         val gson=Gson()
         val jsonList= sharedPreferences.getString("listProduct","")
-        val type: Type =object : TypeToken<List<orderItem>>(){}.type
+        val type: Type =object : TypeToken<List<LineItems>>(){}.type
         return gson.fromJson(jsonList,type)
     }
-    fun saveToSharedPreference(newList:List<orderItem>){
+    fun saveToSharedPreference(newList:List<LineItems>){
         var sharedPreferences:SharedPreferences=requireActivity().getSharedPreferences("cartItemList",Context.MODE_PRIVATE)
         var  editor = sharedPreferences.edit()
         val gson=Gson()

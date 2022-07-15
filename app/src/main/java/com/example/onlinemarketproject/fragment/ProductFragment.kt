@@ -51,8 +51,6 @@ class ProductFragment : Fragment() {
         pageViewModel.getProductWithId(id)
 
         binding.button4.setOnClickListener {
-
-
                var newProduct= pageViewModel.getProductWithId(id)
             if (newProduct!=null) {
                 addItem(newProduct)
@@ -92,6 +90,7 @@ class ProductFragment : Fragment() {
 
     fun addItem(productItemX: productItemX) {
         var sharedPreferences:SharedPreferences=requireActivity().getSharedPreferences("cartItemList",Context.MODE_PRIVATE)
+        var editor=sharedPreferences.edit()
         val gson = Gson()
         val orderList = if (getListItem().isNullOrEmpty()) {
             mutableListOf()
@@ -109,7 +108,9 @@ class ProductFragment : Fragment() {
             )
             || gson.toJson(orderList).contains(productItemX.name)
         ) {
-            Log.i("yes","already exist!")
+
+            Toast.makeText(context,"این آیتم قبلا اضافه شده است.",Toast.LENGTH_SHORT).show()
+
         }else{
             orderList.add(
                 LineItems(
@@ -121,13 +122,13 @@ class ProductFragment : Fragment() {
                 )
             )
             val listToJson=gson.toJson(orderList)
-            myPreference.editor.putString("listProduct",listToJson)
-            myPreference.editor.apply()
+           editor.putString("listProduct",listToJson)
+           editor.apply()
         }
 
     }
 
-    fun getListItem():MutableList<LineItems>?{
+    fun getListItem():List<LineItems>?{
         var sharedPreferences:SharedPreferences=requireActivity().getSharedPreferences("cartItemList",Context.MODE_PRIVATE)
         val gson=Gson()
         val jsonList= sharedPreferences.getString("listProduct","")

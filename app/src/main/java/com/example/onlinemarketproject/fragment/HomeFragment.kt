@@ -5,11 +5,9 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.onlinemarketproject.R
-import com.example.onlinemarketproject.R.*
 import com.example.onlinemarketproject.adapter.RecyclerViewProductAdapter
 import com.example.onlinemarketproject.databinding.FragmentHomeBinding
 import com.example.onlinemarketproject.viewmodels.HomeViewModel
@@ -19,10 +17,9 @@ class HomeFragment : Fragment() {
 
     private val viewModel: HomeViewModel by viewModels()
     private lateinit var binding: FragmentHomeBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
     }
 
     override fun onCreateView(
@@ -46,8 +43,6 @@ class HomeFragment : Fragment() {
             RecyclerViewProductAdapter { id -> onProductItemClick(id) }
         binding.productBestList.adapter =
             RecyclerViewProductAdapter { id -> onProductItemClick(id) }
-
-
 
         setlistProduct()
 
@@ -106,7 +101,9 @@ class HomeFragment : Fragment() {
         })
 
     }
-//
+
+//  if You Like ADD menu
+
 //    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
 //        super.onCreateOptionsMenu(menu, inflater)
 //        inflater.inflate(R.menu.menu_main, menu)

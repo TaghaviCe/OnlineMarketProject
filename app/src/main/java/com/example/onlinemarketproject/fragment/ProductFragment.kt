@@ -15,10 +15,14 @@ import androidx.navigation.fragment.findNavController
 import com.example.onlinemarketproject.R
 import com.example.onlinemarketproject.data.myPreference
 import com.example.onlinemarketproject.databinding.FragmentProductBinding
+import com.example.onlinemarketproject.model.LineItems
+import com.example.onlinemarketproject.model.orderItem
 import com.example.onlinemarketproject.model.productItemX
 import com.example.onlinemarketproject.repositories.ProductRepository
 import com.example.onlinemarketproject.viewmodels.ProductPageViewModel
 import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import java.lang.reflect.Type
 
 class ProductFragment : Fragment() {
 
@@ -42,25 +46,96 @@ class ProductFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.lifecycleOwner = this.viewLifecycleOwner
-        binding.productViewModel=pageViewModel
-        var id=requireArguments().getInt(product, 0)
+        binding.productViewModel = pageViewModel
+        var id = requireArguments().getInt(product, 0)
         pageViewModel.getProductWithId(id)
 
         binding.button4.setOnClickListener {
-            try {
-               // var list =id
 
-                myPreference.addIdItem(id)
-                binding.button4.setBackgroundColor(Color.WHITE);
-                findNavController().navigate(R.id.action_productFragment_to_cartFragment)
 
-            }catch (e: Exception){
-                Toast.makeText(context,"error",Toast.LENGTH_LONG)
-
+               var newProduct= pageViewModel.getProductWithId(id)
+            if (newProduct!=null) {
+                addItem(newProduct)
             }
+
+//                if (newProduct != null) {
+//                    myPreference.addItem(newProduct)
+//                    binding.button4.setBackgroundColor(Color.WHITE)
+//                }
+ //              var shaoppingCartItem:SharedPreferences=requireActivity().getSharedPreferences("cartClient",Context.MODE_PRIVATE)
+//                var editor=shaoppingCartItem.edit()
+//                var gson=Gson()
+//                var list =gson.fromJson(shaoppingCartItem.getString("listOfId",""), arrayListOf<String>()::class.java)
+//                if(list.isNullOrEmpty()){
+//                    var listToJson=gson.toJson(arrayListOf(id))
+//                    editor.putString("listOfId",listToJson)
+//                    editor.apply()
+//                }else{
+//                    list.add(id.toString())
+//                    var listToJson=gson.toJson(list)
+//                    editor.putString("listOfId",listToJson)
+//                    editor.apply()
+//                }
+
+
+
+
+//        } catch (e: Exception){
+//            Toast.makeText(context, "error", Toast.LENGTH_LONG)
+//
+//        }
+    }
 
 
         }
+
+
+    fun addItem(productItemX: productItemX) {
+        var sharedPreferences:SharedPreferences=requireActivity().getSharedPreferences("cartItemList",Context.MODE_PRIVATE)
+        val gson = Gson()
+        val orderList = if (getListItem().isNullOrEmpty()) {
+            mutableListOf()
+        } else {
+            getListItem() as MutableList<LineItems>
+        }
+        if (orderList.contains(
+                LineItems(
+                    name = productItemX.name,
+                    productId = productItemX.id,
+                    quantity = 1,
+                    price = productItemX.price
+                    //image = productItemX.images
+                )
+            )
+            || gson.toJson(orderList).contains(productItemX.name)
+        ) {
+            Log.i("yes","already exist!")
+        }else{
+            orderList.add(
+                LineItems(
+                    name = productItemX.name,
+                    productId = productItemX.id,
+                    quantity = 1,
+                    price = productItemX.price
+                  //  image = productItemX.images
+                )
+            )
+            val listToJson=gson.toJson(orderList)
+            myPreference.editor.putString("listProduct",listToJson)
+            myPreference.editor.apply()
+        }
+
+    }
+
+    fun getListItem():MutableList<LineItems>?{
+        var sharedPreferences:SharedPreferences=requireActivity().getSharedPreferences("cartItemList",Context.MODE_PRIVATE)
+        val gson=Gson()
+        val jsonList= sharedPreferences.getString("listProduct","")
+        val type: Type =object : TypeToken<List<LineItems>>(){}.type
+        return gson.fromJson(jsonList,type)
+    }
+
+
 
 
 
@@ -68,4 +143,3 @@ class ProductFragment : Fragment() {
 
 
 
-}

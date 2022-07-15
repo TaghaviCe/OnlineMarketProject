@@ -7,6 +7,8 @@ import com.bumptech.glide.Glide
 //import com.bumptech.glide.Glide
 
 import com.example.onlinemarketproject.model.Category
+import com.example.onlinemarketproject.model.LineItems
+import com.example.onlinemarketproject.model.orderItem
 import com.example.onlinemarketproject.model.productItemX
 
 
@@ -17,7 +19,7 @@ fun bindRecyclerView(recyclerView: RecyclerView, data: List<productItemX>?) {
     adapter.submitList(data)
 }
 @BindingAdapter("listCartData")
-fun bindRecyclerViewCart(recyclerView: RecyclerView, data: List<productItemX>?) {
+fun bindRecyclerViewCart(recyclerView: RecyclerView, data: List<LineItems>?) {
     val adapter = recyclerView.adapter as RecyclerViewCardAdapter
     adapter.submitList(data)
 }

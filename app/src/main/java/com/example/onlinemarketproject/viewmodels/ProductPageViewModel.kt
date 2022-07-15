@@ -11,7 +11,7 @@ class ProductPageViewModel:ViewModel() {
     var status= MutableLiveData<Status>()
     var oneProduct= MutableLiveData<productItemX>()
 
-     fun getProductWithId(id : Int){
+     fun getProductWithId(id : Int):productItemX?{
         val productRepository= ProductRepository()
         viewModelScope.launch {
             status.value = Status.LOADING
@@ -24,7 +24,12 @@ class ProductPageViewModel:ViewModel() {
 
             }
         }
+         return oneProduct.value
 
+    }
+
+    fun getProductItem(): productItemX? {
+        return oneProduct.value
     }
 //    fun getProductItem(id: Int): productItemX? {
 //        val productRepository= ProductRepository()

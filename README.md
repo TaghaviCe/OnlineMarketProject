@@ -4,6 +4,8 @@ https://fakestoreapi.com/
     
 include working with:
 retrofit,
+moshi,
+json,
 livedata,
 databinding, 
 adapterBinding,

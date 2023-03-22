@@ -1,22 +1,22 @@
 package com.example.onlinemarketproject.model
 
+import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class LineItems(
+    @PrimaryKey(autoGenerate = false)
     @Json(name = "id")
-    val id: Int = 0 ,
-    @Json(name = "name")
-    val name: String,
-    @Json(name = "product_id")
-    val productId: Int,
-//    @Json(name = "variation_id")
-//    val variationId: Int,
-    @Json(name = "quantity")
-    var quantity: Int,
-//    @Json(name = "sku")
-//    val sku: String,
+    val id: Int,
+    @Json(name="image")
+    val image: String,
     @Json(name = "price")
-    val price: String
+    val price: String,
+    @Json(name = "title")
+    val title: String,
+    @Json(name = "quantity")
+    val quantity: Int,
+    @Json(name = "pricePerItem")
+    val pricePerItem: Double,
 )

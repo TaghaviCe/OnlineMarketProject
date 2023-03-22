@@ -37,12 +37,10 @@ class HomeFragment : Fragment() {
         binding.lifecycleOwner = this.viewLifecycleOwner
         binding.homeViewModel = viewModel
 
-        binding.productRecentList.adapter =
-            RecyclerViewProductAdapter { id -> onProductItemClick(id) }
+
         binding.productPopularList.adapter =
             RecyclerViewProductAdapter { id -> onProductItemClick(id) }
-        binding.productBestList.adapter =
-            RecyclerViewProductAdapter { id -> onProductItemClick(id) }
+
 
         setlistProduct()
 
@@ -59,9 +57,9 @@ class HomeFragment : Fragment() {
         viewModel.getPopularList()
         viewModel.getRecentList()
         viewModel.getTopList()
+        viewModel.getWomanList()
         attachPopularOnScrollListener()
-        attachRecentOnScrollListener()
-        attachTopOnScrollListener()
+
     }
 
     //
@@ -77,30 +75,6 @@ class HomeFragment : Fragment() {
         })
     }
 
-    //
-    private fun attachRecentOnScrollListener() {
-        binding.productRecentList.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-                super.onScrolled(recyclerView, dx, dy)
-                if (!recyclerView.canScrollVertically(1) && dy != 0) {
-                    viewModel.getPopularList()
-                }
-            }
-        })
-
-    }
-
-    private fun attachTopOnScrollListener() {
-        binding.productBestList.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-                super.onScrolled(recyclerView, dx, dy)
-                if (!recyclerView.canScrollVertically(1) && dy != 0) {
-                    viewModel.getTopList()
-                }
-            }
-        })
-
-    }
 
 //  if You Like ADD menu
 

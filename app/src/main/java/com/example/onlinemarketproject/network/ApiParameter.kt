@@ -1,35 +1,24 @@
 package com.example.onlinemarketproject.network
 
 class ApiParameter {
-    val BASE_URL = "https://woocommerce.maktabsharif.ir/wp-json/wc/v3/"
-    val CONSUMER_KEY = "ck_63f4c52da932ddad1570283b31f3c96c4bd9fd6f"
-        //"ck_29aec1232103e448630099766d5c854cd455457a"
-    val CONSUMER_SECRET = "cs_294e7de35430398f323b43c21dd1b29f67b5370b"
-        //"cs_697a74a236b94220fa1345271bc0dfe6acdd5c81"
-/*
+    val BASE_URL = "https://fakestoreapi.com/"
 
-ayyebe sadat moosavi:
-const val CONSUMER_KEY = "ck_63f4c52da932ddad1570283b31f3c96c4bd9fd6f"
-
-const val CONSUMER_SECRET = "cs_294e7de35430398f323b43c21dd1b29f67b5370b"
- */
-    val POPULAR = "popularity"
-    val RECENT = "date"
-    val TOP = "rating"
+    val POPULAR = "jewelery"
+    val electronics = "electronics"
+    val MEN = "men's clothing"
+    val WOMAN = "women's clothing"
     val ORDERBY = "orderby"
     val PRICE = "price"
 
     fun getBase_OPTION(): Map<String, String> {
         var BASE_OPTIONS = HashMap<String, String>()
-        BASE_OPTIONS["consumer_key"] = CONSUMER_KEY
-        BASE_OPTIONS["consumer_secret"] = CONSUMER_SECRET
         return BASE_OPTIONS
     }
 
     fun getProduct_OPTION(position: String): Map<String, String> {
         var BASE_OPTIONS = HashMap<String, String>()
         BASE_OPTIONS.putAll(getBase_OPTION())
-        BASE_OPTIONS["orderby"] = position
+        BASE_OPTIONS["category"] = position
         return BASE_OPTIONS
     }
 

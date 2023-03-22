@@ -2,17 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/homeFragment"
-        android:title="خانه"
+        android:title="home"
         android:icon="@drawable/ic_baseline_home_24"
         />
     <item
         android:id="@+id/categoryFragment"
-        android:title="دسته بندی محصولات"
+        android:title="category"
         android:icon="@drawable/ic_baseline_category_24"
         />
     <item
         android:id="@+id/cartFragment"
-        android:title="سبد خرید"
+        android:title="shopping cart"
         android:icon="@drawable/ic_baseline_category_24"
         />
 

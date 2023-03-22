@@ -15,26 +15,34 @@ class ProductRepository() {
         return ShopApi.retrofitService.getProductItem(Id=id)
     }
 
-    suspend fun getPopularProduct():List<productItemX>{
+    suspend fun getRecentProduct():List<productItemX>{
         var par=ApiParameter()
-        return ShopApi.retrofitService.getPopularItems(par.getProduct_OPTION(
-           par.POPULAR
-        ))
+        return ShopApi.retrofitService.getCategoryProducts(par.POPULAR
+
+        )
 
     }
 
-    suspend fun getRecentProduct():List<productItemX>{
+    suspend fun getPopularProduct():List<productItemX>{
         var par=ApiParameter()
-        return ShopApi.retrofitService.getPopularItems(par.getProduct_OPTION(
-           par.RECENT
-        ))
+        return ShopApi.retrofitService.getCategoryProducts(
+           par.electronics
+        )
 
     }
     suspend fun geTopProduct():List<productItemX>{
         var par=ApiParameter()
-        return ShopApi.retrofitService.getPopularItems(par.getProduct_OPTION(
-            par.TOP
-        ))
+        return ShopApi.retrofitService.getCategoryProducts(
+            par.MEN
+        )
+
+    }
+
+    suspend fun geWomanProduct():List<productItemX>{
+        var par=ApiParameter()
+        return ShopApi.retrofitService.getCategoryProducts(
+            par.WOMAN
+        )
 
     }
 

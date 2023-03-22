@@ -46,6 +46,9 @@ class CartFragment : Fragment() {
 
         getListItem()?.let { viewModel.getListPref(it) }
         attachItemsOnScrollListener()
+        binding.buttonCart.setOnClickListener {
+
+        }
 
     }
     fun getListItem():List<LineItems>?{

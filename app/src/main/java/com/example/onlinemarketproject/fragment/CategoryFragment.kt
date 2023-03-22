@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.onlinemarketproject.R
 import com.example.onlinemarketproject.adapter.RecyclerViewCategoryAdapter
+import com.example.onlinemarketproject.adapter.RecyclerViewProductAdapter
 import com.example.onlinemarketproject.databinding.FragmentCategoryBinding
 import com.example.onlinemarketproject.viewmodels.CategoryViewModel
 
@@ -38,28 +39,84 @@ class CategoryFragment : Fragment() {
         binding.lifecycleOwner = this.viewLifecycleOwner
          binding.categoryViewModel = viewModel
 
-        binding.categoryList.adapter=  RecyclerViewCategoryAdapter{id -> onProductListItemClick(id)}
+        binding.productRecentList.adapter =
+            RecyclerViewProductAdapter { id -> onProductItemClick(id) }
+        binding.productPopularList.adapter =
+            RecyclerViewProductAdapter { id -> onProductItemClick(id) }
+        binding.productBestList.adapter =
+            RecyclerViewProductAdapter { id -> onProductItemClick(id) }
+        binding.productWomanList.adapter =
+            RecyclerViewProductAdapter { id -> onProductItemClick(id) }
+
         setlistProduct()
     }
-    private fun onProductListItemClick(id: Int) {
+
+    private fun onProductItemClick(id: Int) {
         val bundle = bundleOf(product to id)
-        findNavController().navigate(R.id.action_categoryFragment_to_productListFragment, bundle)
+        findNavController().navigate(R.id.action_homeFragment_to_productFragment, bundle)
     }
 
+
     private fun setlistProduct() {
-        viewModel.getCategoryItem()
-        attachCategoryOnScrollListener()
+        viewModel.getProductItem()
+        viewModel.getPopularList()
+        viewModel.getRecentList()
+        viewModel.getTopList()
+        viewModel.getWomanList()
+        attachPopularOnScrollListener()
+        attachRecentOnScrollListener()
+        attachTopOnScrollListener()
+        attachWomanOnScrollListener()
     }
-    private fun attachCategoryOnScrollListener() {
-        binding.categoryList.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+
+    //
+    private fun attachPopularOnScrollListener() {
+        binding.productPopularList.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
                 if (!recyclerView.canScrollVertically(1) && dy != 0) {
-                    viewModel.getCategoryItem()
+                    viewModel.getProductItem()
 
                 }
             }
         })
+    }
+
+    //
+    private fun attachRecentOnScrollListener() {
+        binding.productRecentList.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                if (!recyclerView.canScrollVertically(1) && dy != 0) {
+                    viewModel.getPopularList()
+                }
+            }
+        })
+
+    }
+
+    private fun attachTopOnScrollListener() {
+        binding.productBestList.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                if (!recyclerView.canScrollVertically(1) && dy != 0) {
+                    viewModel.getTopList()
+                }
+            }
+        })
+
+    }
+
+    private fun attachWomanOnScrollListener() {
+        binding.productBestList.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                if (!recyclerView.canScrollVertically(1) && dy != 0) {
+                    viewModel.getWomanList()
+                }
+            }
+        })
+
     }
 
 

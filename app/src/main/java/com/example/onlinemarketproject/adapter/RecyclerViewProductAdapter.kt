@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.onlinemarketproject.databinding.ProdectRowItemsBinding
 
 import com.example.onlinemarketproject.model.productItemX
@@ -16,9 +17,12 @@ class RecyclerViewProductAdapter(var onProductClick: showProductDetails) :
 
    inner class MainViewHolder( private var binding: ProdectRowItemsBinding):RecyclerView.ViewHolder(binding.root){
         fun bind(productItemX: productItemX) {
-            binding.productImageSrc= productItemX.images?.get(0)?.src.toString()
-            binding.productName=productItemX.name
-            binding.price=productItemX.price
+            Glide.with(binding.imageProduct)
+                .load(productItemX.image)
+                .into(binding.imageProduct)
+
+            binding.productName=productItemX.title
+            binding.price=productItemX.price.toString()
             binding.executePendingBindings()
             binding.root.setOnClickListener { onProductClick(productItemX.id) }
         }

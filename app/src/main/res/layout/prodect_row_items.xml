@@ -25,26 +25,25 @@
 </data>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="200dp"
+        android:layout_width="210dp"
         android:layout_height="400dp"
-        android:layout_margin="10dp"
+        android:layout_margin="20dp"
+        android:background="#013678"
+        app:cardCornerRadius="12dp"
         android:padding="8dp">
-        <View
-            android:layout_width="2dp"
-            android:layout_height="match_parent"
-            android:background="#000000"
-            />
+
 
         <LinearLayout
             android:layout_width="200dp"
             android:layout_height="match_parent"
-            android:layout_margin="5dp"
+            android:layout_margin="10dp"
+            android:background="#FFFFFF"
             android:orientation="vertical">
 
 
             <ImageView
                 android:id="@+id/image_product"
-                android:layout_width="100dp"
+                android:layout_width="120dp"
                 android:layout_height="200dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
@@ -53,18 +52,21 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_baseline_home_24"
+                tools:srcCompat="@tools:sample/avatars"
                 app:imageUrl="@{productImageSrc.toString()}" />
 
             <TextView
                 android:id="@+id/title_product"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/image_product"
+                android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:text="@{productName}"
-                android:textColor="@color/black" />
+                android:layout_marginBottom="8dp"
+                android:text="@{productName.substring(0,16).toString()}"
+                android:textColor="#930062" />
 
             <TextView
                 android:id="@+id/price_product"
@@ -76,7 +78,7 @@
                 android:layout_marginBottom="8dp"
                 android:text="@{price}"
                 android:textAlignment="viewStart"
-                android:textColor="#66038F"
+                android:textColor="#013678"
                 android:textStyle="bold" />
 
         </LinearLayout>

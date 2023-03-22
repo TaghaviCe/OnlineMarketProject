@@ -2,9 +2,12 @@
     <string name="app_name">OnlineMarketProject</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="category_fragment">دسته بندی محصولات</string>
-    <string name="recent">آخرین محصولات</string>
-    <string name="best">بهترين محصولات</string>
+    <string name="recent">همه محصولات</string>
+    <string name="best">زیورآلات</string>
     <string name="popular">پربازدید ترین محصولات</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="signup">sign up</string>
+    <string name="sign_up_text">create account</string>
+    <string name="login_text">Login</string>
 </resources>

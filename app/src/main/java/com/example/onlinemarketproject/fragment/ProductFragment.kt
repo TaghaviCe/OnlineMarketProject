@@ -2,23 +2,16 @@ package com.example.onlinemarketproject.fragment
 
 import android.content.Context
 import android.content.SharedPreferences
-import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
-import com.example.onlinemarketproject.R
-import com.example.onlinemarketproject.data.myPreference
 import com.example.onlinemarketproject.databinding.FragmentProductBinding
 import com.example.onlinemarketproject.model.LineItems
-import com.example.onlinemarketproject.model.orderItem
 import com.example.onlinemarketproject.model.productItemX
-import com.example.onlinemarketproject.repositories.ProductRepository
 import com.example.onlinemarketproject.viewmodels.ProductPageViewModel
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -99,14 +92,18 @@ class ProductFragment : Fragment() {
         }
         if (orderList.contains(
                 LineItems(
-                    name = productItemX.name,
-                    productId = productItemX.id,
-                    quantity = 1,
-                    price = productItemX.price
-                    //image = productItemX.images
+                    title = productItemX.title,
+                    image = productItemX.image,
+                    pricePerItem = productItemX.price.toDouble(),
+                    quantity = productItemX.rating.rate.toInt(),
+                    price = productItemX.price.toString(),
+                    id = productItemX.id.toInt()
+
+
+
                 )
             )
-            || gson.toJson(orderList).contains(productItemX.name)
+            || gson.toJson(orderList).contains(productItemX.title)
         ) {
 
             Toast.makeText(context,"این آیتم قبلا اضافه شده است.",Toast.LENGTH_SHORT).show()
@@ -114,11 +111,13 @@ class ProductFragment : Fragment() {
         }else{
             orderList.add(
                 LineItems(
-                    name = productItemX.name,
-                    productId = productItemX.id,
-                    quantity = 1,
-                    price = productItemX.price
-                  //  image = productItemX.images
+                    title = productItemX.title,
+                    image = productItemX.image,
+                    pricePerItem = productItemX.price.toDouble(),
+                    quantity = productItemX.rating.rate.toInt(),
+                    price = productItemX.price.toString(),
+                    id = productItemX.id.toInt()
+
                 )
             )
             val listToJson=gson.toJson(orderList)

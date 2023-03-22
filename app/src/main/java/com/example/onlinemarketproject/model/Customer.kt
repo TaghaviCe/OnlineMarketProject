@@ -4,25 +4,22 @@ import com.google.gson.annotations.SerializedName
 import com.squareup.moshi.Json
 
 data class Customer(
-    @Json(name="id")
-     var mId: Int? = null,
+    @Json(name="address")
+    val address: Address,
+    @SerializedName("email")
+    val email: String,
+    @SerializedName("id")
+    val id: Int,
+    @SerializedName("name")
+    val name: Name,
+    @SerializedName("password")
+    val password: String,
+    @SerializedName("phone")
+    val phone: String,
+    @SerializedName("username")
+    val username: String,
+    @SerializedName("__v")
+    val v: Int
 
-    @Json(name="email")
-     val mEmail: String? = null,
-
-  @Json(name="first_name")
-    val mFirstName: String? = null,
-
-  @Json(name="last_name")
-   val mLastName: String? = null,
-
-   @Json(name="username")
-   val mUserName: String? = null
-//
-//   @Json(name="billing")
-//    val mBilling: Billing? = null,
-//
-//   @Json(name="shipping")
-//   val mShipping: Shipping? = null,
 
 )

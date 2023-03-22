@@ -16,15 +16,33 @@ class HomeViewModel:ViewModel() {
     var listPopular=MutableLiveData<List<productItemX>>()
    var listReacent=MutableLiveData<List<productItemX>>()
    var listTop=MutableLiveData<List<productItemX>>()
+    var listWoman=MutableLiveData<List<productItemX>>()
 
     init {
         getProductItem()
         getPopularList()
         getRecentList()
         getTopList()
+        getWomanList()
     }
 
-   fun getProductItem() {
+     fun getWomanList() {
+        val productRepository=ProductRepository()
+        viewModelScope.launch {
+            status.value = Status.LOADING
+            try {
+                listWoman.value =productRepository.geWomanProduct()
+                status.value = Status.DONE
+
+            } catch (e: Exception) {
+                status.value=Status.ERROR
+                listWoman.value= listOf()
+
+            }
+        }
+    }
+
+    fun getProductItem() {
         val productRepository=ProductRepository()
         viewModelScope.launch {
             status.value = Status.LOADING

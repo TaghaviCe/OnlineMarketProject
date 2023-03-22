@@ -52,6 +52,12 @@ fun bindRecyclerViewTop(recyclerView: RecyclerView, data: List<productItemX>?) {
     adapter.submitList(data)
 }
 
+@BindingAdapter("listDataWoman")
+fun bindRecyclerViewWoman(recyclerView: RecyclerView, data: List<productItemX>?) {
+    val adapter = recyclerView.adapter as RecyclerViewProductAdapter
+    adapter.submitList(data)
+}
+
 @BindingAdapter("listDataCategory")
 fun bindRecyclerViewCategory(recyclerView: RecyclerView, data: List<Category>?) {
     val adapter = recyclerView.adapter as RecyclerViewCategoryAdapter

@@ -15,8 +15,8 @@ class RecyclerViewCategoryAdapter(var onProductListClick: showProduct) :
 
     inner class MainViewHolder( private var binding: CategoryRowItemsBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(category:Category) {
-            binding.productImageSrc= category.images?.get(0)?.src.toString()
-            binding.productName=category.name
+            binding.productImageSrc= category.id.toString()
+            binding.productName=category.category.toString()
             binding.executePendingBindings()
             binding.root.setOnClickListener { onProductListClick(category.id) }
         }

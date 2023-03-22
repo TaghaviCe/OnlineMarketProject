@@ -37,8 +37,8 @@
                 <ImageView
                     android:id="@+id/imageView"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    app:imageUrl="@{productViewModel.oneProduct.images[0].src}"
+                    android:layout_height="250dp"
+                    app:imageUrl="@{productViewModel.oneProduct.image}"
                     tools:src="@drawable/ic_baseline_shopping_bag_24" />
 
                 <View
@@ -57,7 +57,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:background="#FF8A80"
-                    android:text="@{productViewModel.oneProduct.name}"
+                    android:text="@{productViewModel.oneProduct.title}"
                     />
 
 
@@ -82,7 +82,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:background="#FF8A80"
-                    android:text="@{productViewModel.oneProduct.shortDescription}"
+                    android:text="@{productViewModel.oneProduct.description}"
                    />
 
                 <View

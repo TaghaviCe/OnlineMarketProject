@@ -1,37 +1,26 @@
 package com.example.onlinemarketproject.model
 
 
+import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
 
 data class productItemX(
 
-    @Json(name = "id")
+    @Json(name = "category")
+    val category: String,
+    @Json(name="description")
+    val description: String,
+    @PrimaryKey(autoGenerate = false)
+    @Json(name="id")
     val id: Int,
-    @Json(name = "images")
-    val images: List<Image>?,
-
-    @Json(name = "name")
-    val name: String,
-
-    @Json(name = "price")
-    val price: String,
-
-    @Json(name = "price_html")
-    val priceHtml: String,
-
-    @Json(name = "rating_count")
-    val ratingCount: Int,
-
-    @Json(name = "related_ids")
-    val relatedIds: List<Int>,
-    @Json(name = "reviews_allowed")
-    val reviewsAllowed: Boolean,
-    @Json(name = "sale_price")
-    val salePrice: String,
-
-    @Json(name = "short_description")
-    val shortDescription: String,
-
+    @Json(name="image")
+    val image: String,
+    @Json(name="price")
+    val price: Double,
+    @Json(name= "rating")
+    val rating: Rating,
+    @Json(name="title")
+    val title: String
 
 )
 /*

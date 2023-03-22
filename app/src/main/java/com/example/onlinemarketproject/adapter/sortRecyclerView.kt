@@ -13,9 +13,9 @@ class sortRecyclerView:
 
     class MainViewHolder( private var binding: ProdectRowItemsBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(productItemX: productItemX) {
-            binding.productImageSrc= productItemX.images?.get(0)?.src.toString()
-            binding.productName=productItemX.name
-            binding.price=productItemX.price
+            binding.productImageSrc= productItemX.image
+            binding.productName=productItemX.title
+            binding.price=productItemX.price.toString()
             binding.executePendingBindings()
 
         }

@@ -12,7 +12,7 @@ class MyApplication : Application(){
         setupPreferences()
     }
     private fun setupPreferences() {
-        myPreference.init(this)
+       // myPreference.init(this)
     }
 
 

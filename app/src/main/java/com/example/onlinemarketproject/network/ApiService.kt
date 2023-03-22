@@ -1,14 +1,13 @@
 package com.example.onlinemarketproject.network
 
 
-import com.example.onlinemarketproject.model.Category
-import com.example.onlinemarketproject.model.Customer
-import com.example.onlinemarketproject.model.productItemX
+import com.example.onlinemarketproject.model.*
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.*
@@ -32,7 +31,7 @@ private val moshi = Moshi.Builder()
     .build()
 
 interface ApiService {
-    @GET("products/")
+    @GET("products")
     suspend fun listProductItems(
         @QueryMap options: Map<String, String> = apiParameter.getBase_OPTION()
     ): List<productItemX>
@@ -48,10 +47,16 @@ interface ApiService {
         @QueryMap options: Map<String, String>
     ): List<productItemX>
 
-    @GET("products/categories/")
+    @GET("products/categories")
     suspend fun getCategoryList(
         @QueryMap category: Map<String, String> = apiParameter.getCategory_OPTION()
         ): List<Category>
+
+    @GET("products/category/{category}")
+    suspend fun getCategoryProducts(
+        @Path("category") category: String,
+        @QueryMap options: Map<String, String> = apiParameter.getCategory_OPTION()
+    ) : List<productItemX>
 
     @GET("products")
     suspend fun getProductsOfCategory(
@@ -59,17 +64,15 @@ interface ApiService {
 
     ):List<productItemX>
 
-    @POST
-    suspend fun createCustomer(
-        @Url  url:String,
-        @Body  customer: Customer,
-        @QueryMap category: Map<String, String> = apiParameter.getCategory_OPTION()
-    ):Customer
+    @GET("users/{id}")
+    suspend fun getUser(@Path(value = "id") id : Int) : Response<Customer>
+    //Login user
+    @POST("auth/login")
+    suspend fun loginUser(@Body login : Login): Response<LoginResponse>
 
-    @GET("customers")
-    suspend fun getCustomer(
-        @QueryMap category: Map<String, String> = apiParameter.getCategory_OPTION()
-    ):List<Customer>
+    //Register user
+    @POST("users")
+    suspend fun registerUser(@Body user :Customer): Response<Customer>
 
 }
 object ShopApi {

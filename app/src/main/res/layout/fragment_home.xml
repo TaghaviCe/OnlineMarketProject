@@ -18,7 +18,7 @@
         android:layout_height="match_parent"
         android:layout_margin="6dp"
         android:layout_marginBottom="6dp"
-        android:background="#FF8A80"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,55 +54,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:orientation="horizontal"
-                android:scrollbars="vertical"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:listDataPopular="@{homeViewModel.listPopular}"
-                tools:listitem="@layout/prodect_row_items" />
-
-            <TextView
-                android:id="@+id/product_best"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:text="@string/best"
-                android:textColor="#66038F"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/product_recent_list"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal"
-                android:scrollbars="vertical"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:listDataRecent="@{homeViewModel.listReacent}"
-                tools:listitem="@layout/prodect_row_items" />
-
-            <TextView
-                android:id="@+id/product_popular"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:layout_marginRight="20dp"
-                android:text="@string/popular"
-                android:textColor="#66038F"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/product_best_list"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal"
-                android:scrollbars="vertical"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:listDataTop="@{homeViewModel.listTop}"
+                android:layout_margin="5dp"
+                app:spanCount="2"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:listDataPopular="@{homeViewModel.item}"
                 tools:listitem="@layout/prodect_row_items" />
 
 

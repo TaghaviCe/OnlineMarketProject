@@ -5,10 +5,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.onlinemarketproject.databinding.CartRowItemsBinding
-import com.example.onlinemarketproject.databinding.ProdectRowItemsBinding
 import com.example.onlinemarketproject.model.LineItems
-import com.example.onlinemarketproject.model.orderItem
 import com.example.onlinemarketproject.model.productItemX
 import com.example.onlinemarketproject.repositories.ProductRepository
 
@@ -19,7 +18,10 @@ class RecyclerViewCardAdapter() :
         RecyclerView.ViewHolder(binding.root) {
         var productRepository=ProductRepository()
         fun bind(lineItems: LineItems) {
-              binding.productName=lineItems.name
+            Glide.with(binding.imageProduct)
+                .load(lineItems.image)
+                .into(binding.imageProduct)
+            binding.productName=lineItems.title.toString()
               binding.productPrice=lineItems.price.toString()
 //            binding.productImageSrc = productItemX.images?.get(0)?.src.toString()
 //            binding.productName = productItemX.name
@@ -32,11 +34,11 @@ class RecyclerViewCardAdapter() :
 
     object DiffCallback : DiffUtil.ItemCallback<LineItems>() {
         override fun areItemsTheSame(oldItem: LineItems, newItem: LineItems): Boolean {
-            return oldItem.productId == newItem.productId
+            return oldItem.id == newItem.id
         }
 
         override fun areContentsTheSame(oldItem: LineItems,newItem: LineItems): Boolean {
-            return oldItem.productId == newItem.productId
+            return oldItem.id== newItem.id
         }
 
 

@@ -6,6 +6,7 @@ include working with:
 retrofit,
 moshi,
 json,
+MVVM Architecture,
 livedata,
 databinding, 
 adapterBinding,

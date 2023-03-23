@@ -56,23 +56,14 @@
         android:id="@+id/cartFragment"
         android:name="com.example.onlinemarketproject.fragment.CartFragment"
         android:label="CartFragment" >
+
         <action
-            android:id="@+id/action_cartFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
-        <action
-            android:id="@+id/action_cartFragment_to_signUpFragment"
-            app:destination="@id/signUpFragment" />
+            android:id="@+id/action_cartFragment_to_loginUserFragment"
+            app:destination="@id/loginUserFragment" />
     </fragment>
     <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.example.onlinemarketproject.fragment.LoginFragment"
-        android:label="LoginFragment" />
-    <fragment
-        android:id="@+id/signUpFragment"
-        android:name="com.example.onlinemarketproject.fragment.SignUpFragment"
-        android:label="SignUpFragment" >
-        <action
-            android:id="@+id/action_signUpFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
-    </fragment>
+        android:id="@+id/loginUserFragment"
+        android:name="com.example.onlinemarketproject.fragment.LoginUserFragment"
+        android:label="fragment_login_user"
+        tools:layout="@layout/fragment_login_user" />
 </navigation>

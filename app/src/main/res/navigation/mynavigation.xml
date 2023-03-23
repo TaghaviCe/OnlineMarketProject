@@ -60,10 +60,22 @@
         <action
             android:id="@+id/action_cartFragment_to_loginUserFragment"
             app:destination="@id/loginUserFragment" />
+        <action
+            android:id="@+id/action_cartFragment_to_signUpUserFragment"
+            app:destination="@id/signUpUserFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginUserFragment"
         android:name="com.example.onlinemarketproject.fragment.LoginUserFragment"
         android:label="fragment_login_user"
         tools:layout="@layout/fragment_login_user" />
+    <fragment
+        android:id="@+id/signUpUserFragment"
+        android:name="com.example.onlinemarketproject.fragment.SignUpUserFragment"
+        android:label="fragment_sign_up_user"
+        tools:layout="@layout/fragment_sign_up_user" >
+        <action
+            android:id="@+id/action_signUpUserFragment_to_loginUserFragment"
+            app:destination="@id/loginUserFragment" />
+    </fragment>
 </navigation>

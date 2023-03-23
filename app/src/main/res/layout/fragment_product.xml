@@ -52,12 +52,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Name"
+                    android:textColor="#930062"
+                    android:fontFamily="@font/norwester"
                     android:textSize="20dp" />
                 <TextView
                     android:id="@+id/textViewNameText"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:background="#FFFFFF"
+                    android:layout_margin="10dp"
+                    android:textColor="#013678"
                     android:text="@{productViewModel.oneProduct.title}"
                     />
 
@@ -70,19 +74,20 @@
                     android:id="@+id/textViewName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/norwester"
                     android:text="Product Specifications"
+                    android:textColor="#930062"
                     android:textSize="20dp" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="3dp"
-                    android:background="@color/black" />
+
 
                 <TextView
                     android:id="@+id/textView2"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:background="#FFFFFF"
+                    android:layout_margin="10dp"
+                    android:textColor="#013678"
                     android:text="@{productViewModel.oneProduct.description}"
                    />
 
@@ -102,6 +107,12 @@
                     app:backgroundTint="@null"
                     android:layout_margin="20sp"
                     android:text="Add To Cart" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="50sp"
+                    android:text="TextView" />
 
 
             </LinearLayout>

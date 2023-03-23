@@ -53,7 +53,7 @@ class CategoryFragment : Fragment() {
 
     private fun onProductItemClick(id: Int) {
         val bundle = bundleOf(product to id)
-        findNavController().navigate(R.id.action_homeFragment_to_productFragment, bundle)
+        findNavController().navigate(R.id.action_categoryFragment_to_productFragment, bundle)
     }
 
 

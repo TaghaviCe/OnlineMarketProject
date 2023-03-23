@@ -8,16 +8,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.onlinemarketproject.R
 import com.example.onlinemarketproject.databinding.FragmentLoginUserBinding
-import com.example.onlinemarketproject.databinding.FragmentProductBinding
 import com.example.onlinemarketproject.viewmodels.LoginViewModel
 
 
 class LoginUserFragment : Fragment() {
 
-    private lateinit var viewModel: LoginViewModel
+    private val viewModel: LoginViewModel by viewModels()
     private lateinit var binding:FragmentLoginUserBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +35,8 @@ class LoginUserFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        binding.lifecycleOwner = this.viewLifecycleOwner
+        binding.loginViewModel=viewModel
 
         binding.buttonLogin.setOnClickListener {
             val username = binding.inputUsername.text.toString().trim()

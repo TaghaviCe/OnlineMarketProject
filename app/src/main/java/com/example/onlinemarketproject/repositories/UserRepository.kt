@@ -1,6 +1,7 @@
 package com.example.onlinemarketproject.repositories
 
 
+import android.util.Log
 import com.example.onlinemarketproject.model.Customer
 import com.example.onlinemarketproject.model.Login
 import com.example.onlinemarketproject.model.LoginResponse
@@ -22,16 +23,19 @@ lateinit var b:Response<LoginResponse>
 
      suspend fun registerUser(user: Customer): Response<Customer> {
           a=ShopApi.retrofitService.registerUser(user)
+         Log.i("repo1","${a.isSuccessful}")
           return a
     }
 
     fun registerMessage(): Resource<Customer>{
+        Log.i("repo2","${a}")
        return responseToUserResult(a)
     }
 
      fun responseToUserResult(response : Response<Customer>) : Resource<Customer> {
         if (response.isSuccessful){
             response.body()?.let { result->
+                Log.i("repo3","${a}")
                 return Resource.Success(result)
             }
         }

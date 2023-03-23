@@ -29,23 +29,22 @@ class SignUpViewModel(app: Application) : AndroidViewModel(app) {
         val user = Customer(address = Address(city = "new city", geolocation = Geolocation("10","10"), number = 3, street = "new street", zipcode = "new zipcode"), email = "new email", id = 10, name = Name(firstname = "new firstname", lastname = "new lastname"),password = password, phone = "new phone",username = username, v = 1)
         viewModelScope.launch {
             try {
-
                 val repo = UserRepository()
                 repo.registerUser(user)
                 val a = repo.registerMessage()
                 when(a){
                     is Resource.Loading -> {
-                        Log.i("LoginViewModel","I dey here, Loading")
+                        Log.i("Sign Up ViewModel","I dey here, Loading")
                     }
                     is Resource.Error -> {
                         error.postValue("${a.message}")
                         successful.postValue(false)
-                        Log.i("LoginViewModel","I dey here, Error ${a.message}")
+                        Log.i("Sign Up ViewModel","I dey here, Error ${a.message}")
                     }
                     is Resource.Success -> {
                         successful.postValue(true)
                         saveUserAccessToken(username)
-                        Log.i("LoginViewModel","I dey here, Success ${a.data.toString()}")
+                        Log.i("Sign Up ViewModel","I dey here, Success ${a.data.toString()}")
                     }
                 }
 
@@ -54,7 +53,6 @@ class SignUpViewModel(app: Application) : AndroidViewModel(app) {
 //            emit (Resource.Error("Couldn't reach server. Check your internet connection."))
             }
         }
-
     }
 
     private fun saveUserAccessToken(username: String) {

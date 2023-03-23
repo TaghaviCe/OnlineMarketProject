@@ -11,11 +11,10 @@ import com.example.onlinemarketproject.viewmodels.LoginViewModel
 
 class LoginFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = LoginFragment()
-    }
 
     private lateinit var viewModel: LoginViewModel
+  //  private lateinit var binding: FragmentLoginBinding
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,10 +23,8 @@ class LoginFragment : Fragment() {
         return inflater.inflate(R.layout.login_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
     }
 
 }

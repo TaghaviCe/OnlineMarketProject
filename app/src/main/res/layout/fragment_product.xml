@@ -37,7 +37,8 @@
                 <ImageView
                     android:id="@+id/imageView"
                     android:layout_width="match_parent"
-                    android:layout_height="250dp"
+                    android:layout_height="260dp"
+                    android:layout_margin="10dp"
                     app:imageUrl="@{productViewModel.oneProduct.image}"
                     tools:src="@drawable/ic_baseline_shopping_bag_24" />
 
@@ -50,13 +51,13 @@
                     android:id="@+id/textView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="نام محصول"
+                    android:text="Name"
                     android:textSize="20dp" />
                 <TextView
                     android:id="@+id/textViewNameText"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:background="#FF8A80"
+                    android:background="#FFFFFF"
                     android:text="@{productViewModel.oneProduct.title}"
                     />
 
@@ -69,7 +70,7 @@
                     android:id="@+id/textViewName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="مشخصات محصول"
+                    android:text="Product Specifications"
                     android:textSize="20dp" />
 
                 <View
@@ -81,7 +82,7 @@
                     android:id="@+id/textView2"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:background="#FF8A80"
+                    android:background="#FFFFFF"
                     android:text="@{productViewModel.oneProduct.description}"
                    />
 
@@ -90,23 +91,17 @@
                     android:layout_height="3dp"
                     android:background="@color/black" />
 
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:text="نظرات" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#FFFF8D"/>
+
 
                 <Button
                     android:id="@+id/button4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="افزودن به سبد خرید" />
+                    android:background="#930062"
+                    app:backgroundTint="@null"
+                    android:layout_margin="20sp"
+                    android:text="Add To Cart" />
 
 
             </LinearLayout>

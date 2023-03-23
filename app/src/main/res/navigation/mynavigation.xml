@@ -68,7 +68,11 @@
         android:id="@+id/loginUserFragment"
         android:name="com.example.onlinemarketproject.fragment.LoginUserFragment"
         android:label="fragment_login_user"
-        tools:layout="@layout/fragment_login_user" />
+        tools:layout="@layout/fragment_login_user" >
+        <action
+            android:id="@+id/action_loginUserFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+    </fragment>
     <fragment
         android:id="@+id/signUpUserFragment"
         android:name="com.example.onlinemarketproject.fragment.SignUpUserFragment"

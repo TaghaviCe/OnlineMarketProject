@@ -1,6 +1,7 @@
 package com.example.onlinemarketproject.fragment
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -18,6 +19,7 @@ import com.google.android.material.snackbar.Snackbar
 class SignUpUserFragment : Fragment() {
     private lateinit var viewModel: SignUpViewModel
     private lateinit var binding: FragmentSignUpUserBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -53,6 +55,11 @@ class SignUpUserFragment : Fragment() {
                             "your account was created!",
                             Toast.LENGTH_SHORT
                         ).show()
+                        var sharedPreferencesForLogIn: SharedPreferences =requireActivity().getSharedPreferences("Logged_in",
+                            Context.MODE_PRIVATE)
+                        var editor=sharedPreferencesForLogIn.edit()
+                        editor.putInt("state",1)
+                        editor.apply()
                        findNavController().navigate(R.id.action_signUpUserFragment_to_loginUserFragment)
 
                     }else if (successful == false){

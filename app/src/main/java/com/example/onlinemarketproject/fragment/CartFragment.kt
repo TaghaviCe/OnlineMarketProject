@@ -9,7 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.onlinemarketproject.R
 import com.example.onlinemarketproject.adapter.RecyclerViewCardAdapter
 import com.example.onlinemarketproject.databinding.FragmentCartBinding
 import com.example.onlinemarketproject.model.LineItems
@@ -47,7 +49,29 @@ class CartFragment : Fragment() {
         getListItem()?.let { viewModel.getListPref(it) }
         attachItemsOnScrollListener()
         binding.buttonCart.setOnClickListener {
-
+            var sharedPreferencesForLogIn:SharedPreferences=requireActivity().getSharedPreferences("Logged_in",Context.MODE_PRIVATE)
+            var flag=sharedPreferencesForLogIn.getInt("state",0)
+            if(flag==0){
+                Toast.makeText(
+                    requireActivity(),
+                    "you should create account first...",
+                    Toast.LENGTH_SHORT
+                ).show()
+                findNavController().navigate(R.id.action_cartFragment_to_signUpUserFragment)
+            }else if(flag==1){
+                Toast.makeText(
+                    requireActivity(),
+                    "you should Login first...",
+                    Toast.LENGTH_SHORT
+                ).show()
+                findNavController().navigate(R.id.action_cartFragment_to_loginUserFragment)
+            }else if(flag==2){
+                Toast.makeText(
+                    requireActivity(),
+                    "Your shopping cart has been registered. Going to payment page...",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
 
     }

@@ -38,19 +38,19 @@
                     android:queryHint="Search Here" />
 
                 <TextView
-                    android:id="@+id/product_recent"
+                    android:id="@+id/product_electronics"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:layout_marginRight="20dp"
-                    android:text="@string/recent"
+                    android:text="@string/electronics"
                     android:textColor="#66038F"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/product_popular_list"
+                    android:id="@+id/product_electronics_list"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -61,19 +61,19 @@
                     tools:listitem="@layout/prodect_row_items" />
 
                 <TextView
-                    android:id="@+id/product_best"
+                    android:id="@+id/product_jewelery"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="20dp"
-                    android:text="@string/best"
+                    android:text="@string/jewelery"
                     android:textColor="#66038F"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/product_recent_list"
+                    android:id="@+id/product_jewelery_list"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -84,18 +84,18 @@
                     tools:listitem="@layout/prodect_row_items" />
 
                 <TextView
-                    android:id="@+id/product_popular"
+                    android:id="@+id/product_men_clothing"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:layout_marginRight="20dp"
-                    android:text="@string/popular"
+                    android:text="@string/men_clothing"
                     android:textColor="#66038F"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/product_best_list"
+                    android:id="@+id/product_men_clothing_list"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -111,9 +111,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:layout_marginRight="20dp"
-                    android:text="@string/popular"
+                    android:text="@string/woman_clothing"
                     android:textColor="#66038F"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <androidx.recyclerview.widget.RecyclerView

@@ -12,14 +12,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.onlinemarketproject.R
 import com.example.onlinemarketproject.adapter.RecyclerViewProductAdapter
 import com.example.onlinemarketproject.adapter.sortRecyclerView
-import com.example.onlinemarketproject.databinding.FragmentProductListBinding
 import com.example.onlinemarketproject.databinding.FragmentSortListBinding
-import com.example.onlinemarketproject.viewmodels.ProductListViewModel
-import com.example.onlinemarketproject.viewmodels.SortListViewModel
-import kotlin.math.log
+import com.example.onlinemarketproject.viewmodels.SearchViewModel
 
-class SortListFragment : Fragment() {
-    private val viewModel: SortListViewModel by viewModels()
+class SearchFragment : Fragment() {
+    private val viewModel: SearchViewModel by viewModels()
     private lateinit var binding: FragmentSortListBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

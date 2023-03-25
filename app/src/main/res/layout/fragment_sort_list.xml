@@ -5,14 +5,14 @@
     <data>
         <variable
             name="SortViewModel"
-            type="com.example.onlinemarketproject.viewmodels.SortListViewModel" />
+            type="com.example.onlinemarketproject.viewmodels.SearchViewModel" />
     </data>
 
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragment.SortListFragment">
+    tools:context=".fragment.SearchFragment">
 
 
     <TextView

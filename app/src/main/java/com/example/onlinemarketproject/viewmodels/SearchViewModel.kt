@@ -8,7 +8,7 @@ import com.example.onlinemarketproject.model.productItemX
 import com.example.onlinemarketproject.repositories.ProductRepository
 import kotlinx.coroutines.launch
 
-class SortListViewModel: ViewModel() {
+class SearchViewModel: ViewModel() {
 
 
      var mCheapestItem=MutableLiveData<List<productItemX>>()

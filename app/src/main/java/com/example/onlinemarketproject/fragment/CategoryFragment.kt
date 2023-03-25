@@ -39,11 +39,11 @@ class CategoryFragment : Fragment() {
         binding.lifecycleOwner = this.viewLifecycleOwner
          binding.categoryViewModel = viewModel
 
-        binding.productRecentList.adapter =
+        binding.productElectronicsList.adapter =
             RecyclerViewProductAdapter { id -> onProductItemClick(id) }
-        binding.productPopularList.adapter =
+        binding.productJeweleryList.adapter =
             RecyclerViewProductAdapter { id -> onProductItemClick(id) }
-        binding.productBestList.adapter =
+        binding.productMenClothingList.adapter =
             RecyclerViewProductAdapter { id -> onProductItemClick(id) }
         binding.productWomanList.adapter =
             RecyclerViewProductAdapter { id -> onProductItemClick(id) }
@@ -71,7 +71,7 @@ class CategoryFragment : Fragment() {
 
     //
     private fun attachPopularOnScrollListener() {
-        binding.productPopularList.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+        binding.productJeweleryList.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
                 if (!recyclerView.canScrollVertically(1) && dy != 0) {
@@ -84,7 +84,7 @@ class CategoryFragment : Fragment() {
 
     //
     private fun attachRecentOnScrollListener() {
-        binding.productRecentList.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+        binding.productElectronicsList.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
                 if (!recyclerView.canScrollVertically(1) && dy != 0) {
@@ -96,7 +96,7 @@ class CategoryFragment : Fragment() {
     }
 
     private fun attachTopOnScrollListener() {
-        binding.productBestList.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+        binding.productMenClothingList.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
                 if (!recyclerView.canScrollVertically(1) && dy != 0) {
@@ -108,7 +108,7 @@ class CategoryFragment : Fragment() {
     }
 
     private fun attachWomanOnScrollListener() {
-        binding.productBestList.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+        binding.productWomanList.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
                 if (!recyclerView.canScrollVertically(1) && dy != 0) {

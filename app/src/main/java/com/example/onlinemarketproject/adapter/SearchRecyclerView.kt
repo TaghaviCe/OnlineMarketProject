@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.onlinemarketproject.databinding.ProdectRowItemsBinding
 import com.example.onlinemarketproject.databinding.ProdectRowItemsTwoBinding
 
 import com.example.onlinemarketproject.model.productItemX

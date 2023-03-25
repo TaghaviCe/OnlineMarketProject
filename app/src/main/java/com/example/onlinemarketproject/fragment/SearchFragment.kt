@@ -48,14 +48,18 @@ class SearchFragment : Fragment() {
 
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
+                productsList= viewModel.getProductItem()!!
                 productsList2 = productsList.filter { it.title.contains("$query",ignoreCase = true)}
+                binding.productProductSearchList.adapter = SearchRecyclerView { id -> onProductItemClick(id) }
                 viewModel.getSearchList(productsList2)
                 attachSearchOnScrollListener( productsList2)
                 return true
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
+                productsList= viewModel.getProductItem()!!
                 productsList2 = productsList.filter { it.title.contains("$newText",ignoreCase = true)}
+                binding.productProductSearchList.adapter = SearchRecyclerView { id -> onProductItemClick(id) }
                 viewModel.getSearchList(productsList2)
                 attachSearchOnScrollListener( productsList2)
                 return true

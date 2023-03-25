@@ -19,7 +19,7 @@ class HomeViewModel:ViewModel() {
     }
 
 
-    fun getProductItem() {
+    fun getProductItem(): List<productItemX>? {
         val productRepository=ProductRepository()
         viewModelScope.launch {
             status.value = Status.LOADING
@@ -33,21 +33,11 @@ class HomeViewModel:ViewModel() {
 
             }
         }
+        return item.value
     }
 
     fun getSearchList(productItemX: List<productItemX>){
-        viewModelScope.launch {
-            status.value = Status.LOADING
-            try {
-                item.value = productItemX
-                status.value = Status.DONE
-
-            } catch (e: Exception) {
-                status.value=Status.ERROR
-                item.value= listOf()
-
-            }
-        }
+            item.value=productItemX
     }
 
 

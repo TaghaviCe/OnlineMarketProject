@@ -18,6 +18,9 @@
         <action
             android:id="@+id/action_homeFragment_to_cartFragment"
             app:destination="@id/cartFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
     </fragment>
     <fragment
         android:id="@+id/productFragment"
@@ -47,14 +50,10 @@
             android:id="@+id/action_productListFragment_to_productFragment"
             app:destination="@id/productFragment" />
         <action
-            android:id="@+id/action_productListFragment_to_sortListFragment"
-            app:destination="@id/sortListFragment" />
+            android:id="@+id/action_productListFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+
     </fragment>
-    <fragment
-        android:id="@+id/sortListFragment"
-        android:name="com.example.onlinemarketproject.fragment.SearchFragment"
-        android:label="fragment_sort_list"
-        tools:layout="@layout/fragment_sort_list" />
     <fragment
         android:id="@+id/cartFragment"
         android:name="com.example.onlinemarketproject.fragment.CartFragment"
@@ -76,7 +75,15 @@
             android:id="@+id/action_loginUserFragment_to_cartFragment"
             app:destination="@id/cartFragment" />
     </fragment>
-<!--    <fragment-->
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.onlinemarketproject.fragment.SearchFragment"
+        android:label="SearchFragment" >
+        <action
+            android:id="@+id/action_searchFragment_to_productFragment"
+            app:destination="@id/productFragment" />
+    </fragment>
+    <!--    <fragment-->
 <!--        android:id="@+id/signUpUserFragment"-->
 <!--        android:name="com.example.onlinemarketproject.fragment.SignUpUserFragment"-->
 <!--        android:label="fragment_sign_up_user"-->

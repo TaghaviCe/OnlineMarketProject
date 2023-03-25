@@ -13,56 +13,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".fragment.SearchFragment">
-
-
-    <TextView
-        android:id="@+id/textView4"
+    <SearchView
+        android:id="@+id/searchView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="مرتب سازی بر اساس"
-        android:textSize="20dp"
-        android:textAlignment="center" />
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:layout_margin="2dp"
-            android:text="گران ترین" />
-
-
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_cheap"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:listDataCheap="@{SortViewModel.cheapestItem}"
-        tools:listitem="@layout/prodect_row_items" />
-
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="2dp"
-        android:text="ارزان ترین" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_expensive"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:listDataExpensive="@{SortViewModel.expensiveItem}"
-            tools:listitem="@layout/prodect_row_items"/>
-
-
+        android:layout_alignParentTop="true"
+        android:iconifiedByDefault="false"
+        android:queryHint="Search Here" />
 
 </LinearLayout>
 </layout>

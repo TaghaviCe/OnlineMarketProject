@@ -20,6 +20,7 @@ class CategoryFragment : Fragment() {
 
     private val viewModel: CategoryViewModel by viewModels()
     private lateinit var binding: FragmentCategoryBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -82,7 +83,6 @@ class CategoryFragment : Fragment() {
         })
     }
 
-    //
     private fun attachRecentOnScrollListener() {
         binding.productElectronicsList.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {

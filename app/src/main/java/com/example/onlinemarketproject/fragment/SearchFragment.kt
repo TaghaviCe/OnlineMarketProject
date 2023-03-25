@@ -11,7 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.onlinemarketproject.R
 import com.example.onlinemarketproject.adapter.RecyclerViewProductAdapter
-import com.example.onlinemarketproject.adapter.sortRecyclerView
+import com.example.onlinemarketproject.adapter.SearchRecyclerView
 import com.example.onlinemarketproject.databinding.FragmentSortListBinding
 import com.example.onlinemarketproject.viewmodels.SearchViewModel
 
@@ -36,7 +36,7 @@ class SearchFragment : Fragment() {
         binding.lifecycleOwner = this.viewLifecycleOwner
         binding.sortViewModel= viewModel
 
-        binding.rvCheap.adapter =sortRecyclerView()
+        binding.rvCheap.adapter =SearchRecyclerView()
         viewModel.mCheapestItem.observe(viewLifecycleOwner){
 
         }

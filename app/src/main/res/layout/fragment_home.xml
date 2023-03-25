@@ -29,20 +29,23 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <SearchView
-                android:id="@+id/searchView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:iconifiedByDefault="false"
-                android:queryHint="Search Here" />
+
+            <Button
+                android:id="@+id/button_search"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="#FFFFFF"
+                app:backgroundTint="@null"
+                android:textSize="50sp"
+                app:icon="@drawable/ic_baseline_search_24"
+                app:iconTint="#3D5AFE" />
 
             <TextView
-                android:id="@+id/product_recent"
+                android:id="@+id/product_all_product"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
-                android:layout_marginRight="20dp"
+                android:layout_marginLeft="15dp"
                 android:text="@string/all_product"
                 android:textColor="#66038F"
                 android:textSize="20dp"
@@ -50,7 +53,7 @@
 
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/product_popular_list"
+                android:id="@+id/product_product_list"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"

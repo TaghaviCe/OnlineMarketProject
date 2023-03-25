@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.onlinemarketproject.databinding.ProdectRowItemsBinding
 import com.example.onlinemarketproject.model.productItemX
 
-class sortRecyclerView:
-    ListAdapter<productItemX, sortRecyclerView.MainViewHolder>(DiffCallback) {
+class SearchRecyclerView:
+    ListAdapter<productItemX, SearchRecyclerView.MainViewHolder>(DiffCallback) {
 
     class MainViewHolder( private var binding: ProdectRowItemsBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(productItemX: productItemX) {
@@ -34,12 +34,12 @@ class sortRecyclerView:
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): sortRecyclerView.MainViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchRecyclerView.MainViewHolder {
         // var view=LayoutInflater.from(parent.context).inflate(R.layout.grid_view_item,parent,false)
         return MainViewHolder(ProdectRowItemsBinding.inflate(LayoutInflater.from(parent.context)))
     }
 
-    override fun onBindViewHolder(holder: sortRecyclerView.MainViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: SearchRecyclerView.MainViewHolder, position: Int) {
         holder.bind(getItem(position))
     }
 

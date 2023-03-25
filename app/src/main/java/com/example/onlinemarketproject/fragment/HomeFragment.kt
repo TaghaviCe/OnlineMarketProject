@@ -38,11 +38,15 @@ class HomeFragment : Fragment() {
         binding.homeViewModel = viewModel
 
 
-        binding.productPopularList.adapter =
+        binding.productProductList.adapter =
             RecyclerViewProductAdapter { id -> onProductItemClick(id) }
 
 
         setlistProduct()
+
+        binding.buttonSearch.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_searchFragment)
+        }
 
     }
 
@@ -54,17 +58,12 @@ class HomeFragment : Fragment() {
 
     private fun setlistProduct() {
         viewModel.getProductItem()
-        viewModel.getPopularList()
-        viewModel.getRecentList()
-        viewModel.getTopList()
-        viewModel.getWomanList()
         attachPopularOnScrollListener()
 
     }
 
-    //
     private fun attachPopularOnScrollListener() {
-        binding.productPopularList.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+        binding.productProductList.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
                 if (!recyclerView.canScrollVertically(1) && dy != 0) {

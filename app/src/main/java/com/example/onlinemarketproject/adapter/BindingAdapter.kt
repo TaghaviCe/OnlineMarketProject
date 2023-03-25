@@ -24,9 +24,9 @@ fun bindRecyclerViewCart(recyclerView: RecyclerView, data: List<LineItems>?) {
     adapter.submitList(data)
 }
 
-@BindingAdapter("listDataExpensive")
+@BindingAdapter("listDataSearch")
 fun bindRecyclerViewExpensive(recyclerView: RecyclerView, data: List<productItemX>?) {
-    val adapter = recyclerView.adapter as RecyclerViewProductAdapter
+    val adapter = recyclerView.adapter as SearchRecyclerView
     adapter.submitList(data)
 }
 @BindingAdapter("listDataCheap")

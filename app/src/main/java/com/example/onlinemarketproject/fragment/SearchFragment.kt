@@ -5,19 +5,23 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.onlinemarketproject.R
-import com.example.onlinemarketproject.adapter.RecyclerViewProductAdapter
 import com.example.onlinemarketproject.adapter.SearchRecyclerView
-import com.example.onlinemarketproject.databinding.FragmentSortListBinding
-import com.example.onlinemarketproject.viewmodels.SearchViewModel
+import com.example.onlinemarketproject.databinding.FragmentSearchBinding
+import com.example.onlinemarketproject.model.productItemX
+import com.example.onlinemarketproject.viewmodels.HomeViewModel
+
 
 class SearchFragment : Fragment() {
-    private val viewModel: SearchViewModel by viewModels()
-    private lateinit var binding: FragmentSortListBinding
+    private val viewModel: HomeViewModel by viewModels()
+    private var productsList = listOf<productItemX>()
+    private var productsList2 = listOf<productItemX>()
+    private lateinit var binding: FragmentSearchBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -27,67 +31,76 @@ class SearchFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding =FragmentSortListBinding.inflate(inflater)
+        binding =FragmentSearchBinding.inflate(inflater)
 
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.lifecycleOwner = this.viewLifecycleOwner
-        binding.sortViewModel= viewModel
-
-        binding.rvCheap.adapter =SearchRecyclerView()
-        viewModel.mCheapestItem.observe(viewLifecycleOwner){
-
-        }
-        binding.rvExpensive.adapter=
-            RecyclerViewProductAdapter{ id -> onProductItemClick(id) }
-
-        var mybundle=requireArguments().getInt("categoryId", 0)
-        binding.textView4.text=mybundle.toString()
+        binding.homeViewModel= viewModel
 
 
-        setList(mybundle)
+        binding.productProductSearchList.adapter = SearchRecyclerView { id -> onProductItemClick(id) }
 
 
-    }
+        setlistProduct()
 
-    private fun setList(mybund:Int) {
-        viewModel.cheapestClicked(mybund.toString())
-        viewModel.mostExpensiveClicked(mybund.toString())
-        attachExpensiveItemsOnScrollListener(mybund)
-        attachCheapestItemsOnScrollListener(mybund)
-    }
-
-    private fun attachCheapestItemsOnScrollListener(mybund:Int) {
-        binding.rvCheap.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-                super.onScrolled(recyclerView, dx, dy)
-                if (!recyclerView.canScrollVertically(1) && dy != 0) {
-                    viewModel.cheapestClicked(mybund.toString())
-                }
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                productsList2 = productsList.filter { it.title.contains("$query",ignoreCase = true)}
+                viewModel.getSearchList(productsList2)
+                attachSearchOnScrollListener( productsList2)
+                return true
             }
-        })
-    }
 
+            override fun onQueryTextChange(newText: String?): Boolean {
+                productsList2 = productsList.filter { it.title.contains("$newText",ignoreCase = true)}
+                viewModel.getSearchList(productsList2)
+                attachSearchOnScrollListener( productsList2)
+                return true
+            }
+
+        })
+
+    }
 
     private fun onProductItemClick(id: Int) {
         val bundle = bundleOf(product to id)
-        findNavController().navigate(R.id.action_productListFragment_to_productFragment, bundle)
+        findNavController().navigate(R.id.action_searchFragment_to_productFragment, bundle)
     }
 
-    private fun attachExpensiveItemsOnScrollListener(mybund:Int) {
-        binding.rvExpensive.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+
+    private fun setlistProduct() {
+        viewModel.getProductItem()
+        attachProductListOnScrollListener()
+
+    }
+
+    private fun attachProductListOnScrollListener() {
+        binding.productProductSearchList.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
                 if (!recyclerView.canScrollVertically(1) && dy != 0) {
-                    viewModel.mostExpensiveClicked(mybund.toString())
+                    viewModel.getProductItem()
 
                 }
             }
         })
     }
 
+
+    private fun attachSearchOnScrollListener(productsList2: List<productItemX>) {
+        binding.productProductSearchList.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                if (!recyclerView.canScrollVertically(1) && dy != 0) {
+                    viewModel.getSearchList(productsList2)
+
+                }
+            }
+        })
+    }
 
 
 

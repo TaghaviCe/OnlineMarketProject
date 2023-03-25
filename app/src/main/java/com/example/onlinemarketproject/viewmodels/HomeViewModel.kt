@@ -35,5 +35,20 @@ class HomeViewModel:ViewModel() {
         }
     }
 
+    fun getSearchList(productItemX: List<productItemX>){
+        viewModelScope.launch {
+            status.value = Status.LOADING
+            try {
+                item.value = productItemX
+                status.value = Status.DONE
+
+            } catch (e: Exception) {
+                status.value=Status.ERROR
+                item.value= listOf()
+
+            }
+        }
+    }
+
 
 }

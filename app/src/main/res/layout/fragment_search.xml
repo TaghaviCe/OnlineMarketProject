@@ -4,8 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
-            name="SortViewModel"
-            type="com.example.onlinemarketproject.viewmodels.SearchViewModel" />
+            name="homeViewModel"
+            type="com.example.onlinemarketproject.viewmodels.HomeViewModel" />
     </data>
 
 <LinearLayout
@@ -20,6 +20,18 @@
         android:layout_alignParentTop="true"
         android:iconifiedByDefault="false"
         android:queryHint="Search Here" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/product_product_search_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:listDataSearch="@{homeViewModel.item}"
+        tools:listitem="@layout/prodect_row_items_two" />
+
 
 </LinearLayout>
 </layout>

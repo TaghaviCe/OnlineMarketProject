@@ -63,9 +63,9 @@
         <action
             android:id="@+id/action_cartFragment_to_loginUserFragment"
             app:destination="@id/loginUserFragment" />
-        <action
-            android:id="@+id/action_cartFragment_to_signUpUserFragment"
-            app:destination="@id/signUpUserFragment" />
+<!--        <action-->
+<!--            android:id="@+id/action_cartFragment_to_signUpUserFragment"-->
+<!--            app:destination="@id/signUpUserFragment" />-->
     </fragment>
     <fragment
         android:id="@+id/loginUserFragment"

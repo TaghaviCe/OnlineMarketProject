@@ -56,10 +56,10 @@ class SignUpUserFragment : Fragment() {
                     "send",
                     Toast.LENGTH_SHORT
                 ).show()
-                viewModel.successful.observe(viewLifecycleOwner) { successful ->
+//                viewModel.successful.observe(viewLifecycleOwner) { successful ->
                     Toast.makeText(
                         requireActivity(),
-                        "$successful",
+                        "hala ",
                         Toast.LENGTH_SHORT
                     ).show()
 
@@ -94,7 +94,7 @@ class SignUpUserFragment : Fragment() {
 //                        ).show()
 //                    }
                 }
-            }
+     //       }
 
             }
 

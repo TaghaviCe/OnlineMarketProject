@@ -21,10 +21,16 @@ lateinit var b:Response<LoginResponse>
         return responseToString(b)
     }
 
-     suspend fun registerUser(user: Customer): Response<Customer> {
-          a=ShopApi.retrofitService.registerUser(user)
-         Log.i("repo1","${a.isSuccessful}")
-          return a
+     suspend fun registerUser(user: Customer): Boolean? {
+         Log.i("repo1","888")
+         val d=ShopApi.retrofitService.registerUser(user)
+         var yes:Boolean?=null
+         if(d.code()==200){
+             yes=true
+             Log.i("repoOk","200")
+         }
+          return yes
+
     }
 
     fun registerMessage(): Resource<Customer>{
@@ -51,4 +57,6 @@ lateinit var b:Response<LoginResponse>
         }
         return Resource.Error(message = "${response.errorBody()?.string()}")
     }
+
+
 }

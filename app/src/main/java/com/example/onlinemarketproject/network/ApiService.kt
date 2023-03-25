@@ -72,7 +72,8 @@ interface ApiService {
 
     //Register user
     @POST("users")
-    suspend fun registerUser(@Body user :Customer): Response<Customer>
+    suspend fun registerUser(
+        @Body user :Customer): Response<Customer>
 
 }
 object ShopApi {

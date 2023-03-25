@@ -76,13 +76,13 @@
             android:id="@+id/action_loginUserFragment_to_cartFragment"
             app:destination="@id/cartFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/signUpUserFragment"
-        android:name="com.example.onlinemarketproject.fragment.SignUpUserFragment"
-        android:label="fragment_sign_up_user"
-        tools:layout="@layout/fragment_sign_up_user" >
-        <action
-            android:id="@+id/action_signUpUserFragment_to_loginUserFragment"
-            app:destination="@id/loginUserFragment" />
-    </fragment>
+<!--    <fragment-->
+<!--        android:id="@+id/signUpUserFragment"-->
+<!--        android:name="com.example.onlinemarketproject.fragment.SignUpUserFragment"-->
+<!--        android:label="fragment_sign_up_user"-->
+<!--        tools:layout="@layout/fragment_sign_up_user" >-->
+<!--        <action-->
+<!--            android:id="@+id/action_signUpUserFragment_to_loginUserFragment"-->
+<!--            app:destination="@id/loginUserFragment" />-->
+<!--    </fragment>-->
 </navigation>

@@ -1,16 +1,17 @@
 package com.example.onlinemarketproject.model
 
+import com.google.gson.annotations.SerializedName
 import com.squareup.moshi.Json
 
 data class Address(
-    @Json(name="city")
+    @SerializedName("city")
     val city: String,
-    @Json(name="geolocation")
+    @SerializedName("geolocation")
     val geolocation: Geolocation,
-    @Json(name="number")
+    @SerializedName("number")
     val number: Int,
-    @Json(name="street")
+    @SerializedName("street")
     val street: String,
-    @Json(name="zipcode")
+    @SerializedName("zipcode")
     val zipcode: String
 )

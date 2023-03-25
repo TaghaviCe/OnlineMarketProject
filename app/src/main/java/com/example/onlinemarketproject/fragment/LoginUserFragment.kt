@@ -38,9 +38,13 @@ class LoginUserFragment : Fragment() {
         binding.lifecycleOwner = this.viewLifecycleOwner
         binding.loginViewModel=viewModel
 
+        //Password and username defined by Fake store api
+        binding.inputUsername.setText("johnd")
+        binding.inputPassword.setText("m38rmF$")
         binding.buttonLogin.setOnClickListener {
-            val username = binding.inputUsername.text.toString().trim()
-            val password = binding.inputPassword.text.toString().trim()
+            var username = binding.inputUsername.editableText.toString()
+            var password = binding.inputPassword.editableText.toString()
+
             if (username.isBlank() || password.isBlank()) {
 
                 Toast.makeText(

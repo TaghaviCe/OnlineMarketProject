@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 import com.squareup.moshi.Json
 
 data class Customer(
-    @Json(name="address")
+    @SerializedName("address")
     val address: Address,
     @SerializedName("email")
     val email: String,
@@ -20,6 +20,5 @@ data class Customer(
     val username: String,
     @SerializedName("__v")
     val v: Int
-
-
 )
+

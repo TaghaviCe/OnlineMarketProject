@@ -54,10 +54,10 @@ class CartFragment : Fragment() {
             if(flag==0){
                 Toast.makeText(
                     requireActivity(),
-                    "you should create account first...",
+                    "you should login first...",
                     Toast.LENGTH_SHORT
                 ).show()
-                findNavController().navigate(R.id.action_cartFragment_to_signUpUserFragment)
+                findNavController().navigate(R.id.action_cartFragment_to_loginUserFragment)
             }else if(flag==1){
                 Toast.makeText(
                     requireActivity(),

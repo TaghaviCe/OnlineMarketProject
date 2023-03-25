@@ -1,10 +1,11 @@
 package com.example.onlinemarketproject.model
 
+import com.google.gson.annotations.SerializedName
 import com.squareup.moshi.Json
 
 data class Geolocation(
-    @Json(name="lat")
+    @SerializedName("lat")
     val lat: String,
-    @Json(name="long")
+    @SerializedName("long")
     val long: String
 )

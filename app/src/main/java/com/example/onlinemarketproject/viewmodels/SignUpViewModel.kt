@@ -20,33 +20,23 @@ import java.io.IOException
 
 class SignUpViewModel(app: Application) : AndroidViewModel(app) {
 
-    val successful : MutableLiveData<Boolean?> = MutableLiveData()
+    var successful : MutableLiveData<Boolean?> = MutableLiveData()
     val error : MutableLiveData<String?> = MutableLiveData()
     var sharedPreferences:SharedPreferences = app.getSharedPreferences("cartItemList", Context.MODE_PRIVATE)
     fun registerUser(username: String, password: String) {
-
+        Log.i("Sign Up ViewModel","go ")
         //create a demo user and upload
         val user = Customer(address = Address(city = "new city", geolocation = Geolocation("10","10"), number = 3, street = "new street", zipcode = "new zipcode"), email = "new email", id = 10, name = Name(firstname = "new firstname", lastname = "new lastname"),password = password, phone = "new phone",username = username, v = 1)
         viewModelScope.launch {
             try {
                 val repo = UserRepository()
-                repo.registerUser(user)
-                val a = repo.registerMessage()
-                when(a){
-                    is Resource.Loading -> {
-                        Log.i("Sign Up ViewModel","I dey here, Loading")
-                    }
-                    is Resource.Error -> {
-                        error.postValue("${a.message}")
-                        successful.postValue(false)
-                        Log.i("Sign Up ViewModel","I dey here, Error ${a.message}")
-                    }
-                    is Resource.Success -> {
-                        successful.postValue(true)
-                        saveUserAccessToken(username)
-                        Log.i("Sign Up ViewModel","I dey here, Success ${a.data.toString()}")
-                    }
-                }
+                Log.i("Sign Up ViewModel","go 2 ")
+                val a= repo.registerUser(user)
+                 if(a==true){
+                     Log.i("Sign Up ViewModel","go 3 ")
+                 }else{
+                     Log.i("Sign Up ViewModel","go 4 ")
+                 }
 
             } catch (e: IOException) {
                 Log.i("AuthUseCase", "${e.localizedMessage}")

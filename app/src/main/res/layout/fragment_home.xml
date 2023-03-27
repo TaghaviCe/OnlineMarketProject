@@ -48,7 +48,8 @@
                 android:layout_marginLeft="15dp"
                 android:text="@string/all_product"
                 android:textColor="#66038F"
-                android:textSize="20dp"
+                android:textSize="16sp"
+                android:fontFamily="@font/merienda"
                 android:textStyle="bold" />
 
 

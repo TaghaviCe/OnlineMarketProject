@@ -44,6 +44,7 @@
                     android:layout_gravity="left"
                     android:layout_marginRight="20dp"
                     android:text="@string/electronics"
+                    android:fontFamily="@font/merienda"
                     android:textColor="#66038F"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -70,6 +71,7 @@
                     android:text="@string/jewelery"
                     android:textColor="#66038F"
                     android:textSize="20dp"
+                    android:fontFamily="@font/merienda"
                     android:textStyle="bold" />
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -92,6 +94,7 @@
                     android:text="@string/men_clothing"
                     android:textColor="#66038F"
                     android:textSize="20dp"
+                    android:fontFamily="@font/merienda"
                     android:textStyle="bold" />
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -110,8 +113,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
                     android:text="@string/woman_clothing"
+                    android:fontFamily="@font/merienda"
                     android:textColor="#66038F"
                     android:textSize="20sp"
                     android:textStyle="bold" />

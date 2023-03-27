@@ -61,6 +61,8 @@
                     android:background="#FFFFFF"
                     android:layout_margin="10dp"
                     android:textColor="#013678"
+                    android:layout_gravity="left"
+                    android:gravity="left"
                     android:text="@{productViewModel.oneProduct.title}"
                     />
 
@@ -89,6 +91,8 @@
                     android:background="#FFFFFF"
                     android:layout_margin="10dp"
                     android:textColor="#013678"
+                    android:layout_gravity="left"
+                    android:gravity="left"
                     android:text="@{productViewModel.oneProduct.description}"
                    />
 

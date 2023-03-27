@@ -16,4 +16,5 @@
     <string name="home">home</string>
     <string name="category">category</string>
     <string name="shopping_cart">shopping cart</string>
+    <string name="welcome_text">Welcome to OnlineMarket</string>
 </resources>

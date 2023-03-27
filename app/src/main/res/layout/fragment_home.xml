@@ -32,11 +32,14 @@
 
             <Button
                 android:id="@+id/button_search"
-                android:layout_width="50dp"
+                android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="#FFFFFF"
                 app:backgroundTint="@null"
-                android:textSize="50sp"
+                android:text="@string/welcome_text"
+                android:fontFamily="@font/merienda"
+                android:textColor="@color/black"
+                android:textSize="16sp"
                 app:icon="@drawable/ic_baseline_search_24"
                 app:iconTint="#3D5AFE" />
 
@@ -45,6 +48,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
+                android:layout_marginTop="5dp"
                 android:layout_marginLeft="15dp"
                 android:text="@string/all_product"
                 android:textColor="#66038F"

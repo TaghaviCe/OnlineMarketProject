@@ -78,7 +78,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="@{price}"
+                android:text="@{price.toString()+`$`}"
                 android:textAlignment="viewStart"
                 android:textColor="#013678"
                 android:textStyle="bold" />

@@ -44,7 +44,7 @@
             android:scaleType="fitXY"
             android:id="@+id/image_product"
             android:layout_width="150dp"
-            android:layout_height="135dp"
+            android:layout_height="165dp"
             android:padding="2dp"
             tools:srcCompat="@tools:sample/avatars"
             app:imageUrl="@{productImageSrc.toString()}"/>

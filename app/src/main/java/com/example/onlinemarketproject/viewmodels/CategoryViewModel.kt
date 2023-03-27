@@ -3,26 +3,24 @@ package com.example.onlinemarketproject.viewmodels
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.onlinemarketproject.model.Category
 import com.example.onlinemarketproject.model.productItemX
-import com.example.onlinemarketproject.repositories.CategoryRepository
 import com.example.onlinemarketproject.repositories.ProductRepository
 import kotlinx.coroutines.launch
 
 class CategoryViewModel:ViewModel() {
     var status= MutableLiveData<Status>()
     var item=MutableLiveData<List<productItemX>>()
-    var listPopular=MutableLiveData<List<productItemX>>()
+    var listElectronic=MutableLiveData<List<productItemX>>()
     var listReacent=MutableLiveData<List<productItemX>>()
-    var listTop=MutableLiveData<List<productItemX>>()
+    var listMen=MutableLiveData<List<productItemX>>()
     var listWoman=MutableLiveData<List<productItemX>>()
 
 
     init {
         getProductItem()
-        getPopularList()
+        getElectronicList()
         getRecentList()
-        getTopList()
+        getMenList()
         getWomanList()
     }
 
@@ -58,17 +56,17 @@ class CategoryViewModel:ViewModel() {
         }
     }
 
-    fun getPopularList(){
+    fun getElectronicList(){
         val productRepository=ProductRepository()
         viewModelScope.launch{
             status.value = Status.LOADING
             try {
-                listPopular.value =productRepository.getPopularProduct()
+                listElectronic.value =productRepository.getElectronicsProduct()
                 status.value = Status.DONE
 
             } catch (e: Exception) {
                 status.value=Status.ERROR
-                listPopular.value= listOf()
+                listElectronic.value= listOf()
 
             }
         }
@@ -90,17 +88,17 @@ class CategoryViewModel:ViewModel() {
         }
     }
 
-    fun getTopList(){
+    fun getMenList(){
         val productRepository=ProductRepository()
         viewModelScope.launch{
             status.value = Status.LOADING
             try {
-                listTop.value =productRepository.geTopProduct()
+                listMen.value =productRepository.getMenProduct()
                 status.value = Status.DONE
 
             } catch (e: Exception) {
                 status.value=Status.ERROR
-                listTop.value= listOf()
+                listMen.value= listOf()
 
             }
         }

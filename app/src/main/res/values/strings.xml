@@ -13,4 +13,7 @@
     <string name="sign_up_text">create account</string>
     <string name="login_text">Login</string>
     <string name="all_product">All Product</string>
+    <string name="home">home</string>
+    <string name="category">category</string>
+    <string name="shopping_cart">shopping cart</string>
 </resources>

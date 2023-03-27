@@ -14,23 +14,20 @@
             name="productViewModel"
             type="com.example.onlinemarketproject.viewmodels.ProductPageViewModel" />
     </data>
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#FFFFFF"
-        tools:context=".fragment.ProductFragment">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="450dp"
+            android:orientation="vertical"
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
 
@@ -53,6 +50,8 @@
                     android:layout_height="wrap_content"
                     android:text="Name"
                     android:textColor="#930062"
+                    android:layout_gravity="left"
+                    android:gravity="left"
                     android:fontFamily="@font/norwester"
                     android:textSize="20dp" />
                 <TextView
@@ -76,6 +75,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/norwester"
                     android:text="Product Specifications"
+                    android:layout_gravity="left"
+                    android:gravity="left"
                     android:textColor="#930062"
                     android:textSize="20dp" />
 
@@ -97,25 +98,32 @@
                     android:background="@color/black" />
 
 
-
-
-                <Button
-                    android:id="@+id/button4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#930062"
-                    app:backgroundTint="@null"
-                    android:layout_margin="20sp"
-                    android:text="Add To Cart" />
-
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="match_parent"
-                    android:layout_height="50sp"
-                    android:text="TextView" />
-
-
             </LinearLayout>
+
+
+
         </ScrollView>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#930062"
+            app:backgroundTint="@null"
+            android:layout_margin="20sp"
+            android:text="Add To Cart" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:text="TextView" />
+    </LinearLayout>
+    </LinearLayout>
+
+
 </layout>

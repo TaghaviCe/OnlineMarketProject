@@ -57,10 +57,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:layout_margin="5dp"
                 app:spanCount="2"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                app:listDataPopular="@{homeViewModel.item}"
+                app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+                app:listData="@{homeViewModel.item}"
                 tools:listitem="@layout/prodect_row_items" />
 
 

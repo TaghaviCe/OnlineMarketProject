@@ -57,7 +57,7 @@
                     android:orientation="horizontal"
                     android:scrollbars="vertical"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    app:listDataPopular="@{categoryViewModel.listPopular}"
+                    app:listDataElectronic="@{categoryViewModel.listElectronic}"
                     tools:listitem="@layout/prodect_row_items" />
 
                 <TextView
@@ -102,7 +102,7 @@
                     android:orientation="horizontal"
                     android:scrollbars="vertical"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    app:listDataTop="@{categoryViewModel.listTop}"
+                    app:listDataMen="@{categoryViewModel.listMen}"
                     tools:listitem="@layout/prodect_row_items" />
 
                 <TextView
@@ -110,7 +110,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginEnd="20dp"
                     android:text="@string/woman_clothing"
                     android:textColor="#66038F"
                     android:textSize="20sp"

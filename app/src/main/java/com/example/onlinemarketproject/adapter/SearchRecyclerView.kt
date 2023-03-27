@@ -18,12 +18,13 @@ class SearchRecyclerView(var onProductClick: showProductDetailsSearch) :
 
     inner class MainViewHolder( private var binding: ProdectRowItemsTwoBinding):RecyclerView.ViewHolder(binding.root){
         fun bind(productItemX: productItemX) {
-            Glide.with(binding.searchItemImage)
+            Glide.with(binding.imageView)
                 .load(productItemX.image)
-                .into(binding.searchItemImage)
+                .into(binding.imageView)
 
             binding.productName=productItemX.title
             binding.price=productItemX.price.toString()
+            binding.rate=productItemX.rating.rate.toString()
             binding.executePendingBindings()
             binding.root.setOnClickListener { onProductClick(productItemX.id) }
         }

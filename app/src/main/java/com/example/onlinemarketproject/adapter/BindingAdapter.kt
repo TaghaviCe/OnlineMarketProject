@@ -29,14 +29,9 @@ fun bindRecyclerViewExpensive(recyclerView: RecyclerView, data: List<productItem
     val adapter = recyclerView.adapter as SearchRecyclerView
     adapter.submitList(data)
 }
-@BindingAdapter("listDataCheap")
-fun bindRecyclerViewCheap(recyclerView: RecyclerView, data: List<productItemX>?) {
-    val adapter = recyclerView.adapter as RecyclerViewProductAdapter
-    adapter.submitList(data)
-}
 
 
-@BindingAdapter("listDataPopular")
+@BindingAdapter("listDataElectronic")
 fun bindRecyclerViewPopular(recyclerView: RecyclerView, data: List<productItemX>?) {
     val adapter = recyclerView.adapter as RecyclerViewProductAdapter
     adapter.submitList(data)
@@ -46,7 +41,7 @@ fun bindRecyclerViewrecent(recyclerView: RecyclerView, data: List<productItemX>?
     val adapter = recyclerView.adapter as RecyclerViewProductAdapter
     adapter.submitList(data)
 }
-@BindingAdapter("listDataTop")
+@BindingAdapter("listDataMen")
 fun bindRecyclerViewTop(recyclerView: RecyclerView, data: List<productItemX>?) {
     val adapter = recyclerView.adapter as RecyclerViewProductAdapter
     adapter.submitList(data)
@@ -57,13 +52,6 @@ fun bindRecyclerViewWoman(recyclerView: RecyclerView, data: List<productItemX>?)
     val adapter = recyclerView.adapter as RecyclerViewProductAdapter
     adapter.submitList(data)
 }
-
-@BindingAdapter("listDataCategory")
-fun bindRecyclerViewCategory(recyclerView: RecyclerView, data: List<Category>?) {
-    val adapter = recyclerView.adapter as RecyclerViewCategoryAdapter
-    adapter.submitList(data)
-}
-
 
 
 /**

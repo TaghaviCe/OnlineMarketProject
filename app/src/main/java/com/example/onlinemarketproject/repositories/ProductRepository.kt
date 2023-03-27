@@ -23,14 +23,14 @@ class ProductRepository() {
 
     }
 
-    suspend fun getPopularProduct():List<productItemX>{
+    suspend fun getElectronicsProduct():List<productItemX>{
         var par=ApiParameter()
         return ShopApi.retrofitService.getCategoryProducts(
            par.electronics
         )
 
     }
-    suspend fun geTopProduct():List<productItemX>{
+    suspend fun getMenProduct():List<productItemX>{
         var par=ApiParameter()
         return ShopApi.retrofitService.getCategoryProducts(
             par.MEN
@@ -48,13 +48,7 @@ class ProductRepository() {
 
 
 
-    suspend fun getCategoryOption(page:Int,categoryId:String):List<productItemX>{
-        var par=ApiParameter()
-        return ShopApi.retrofitService.getProductsOfCategory(
-            par.getCategory_Items(page,categoryId)
-        )
 
-    }
 
     suspend fun getSearchItem(query:String,categoryId:String):List<productItemX>{
         var par=ApiParameter()
@@ -70,13 +64,6 @@ class ProductRepository() {
             par.getCheapestOption(page,categoryId)
         )
 
-    }
-
-    suspend fun getExpensiveProducts(page:Int,categoryId: String):List<productItemX>{
-        var par=ApiParameter()
-        return ShopApi.retrofitService.listProductItems(
-            par.getExpensiveOption(page,categoryId)
-        )
     }
 
 }

@@ -10,7 +10,6 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.onlinemarketproject.R
-import com.example.onlinemarketproject.adapter.RecyclerViewCategoryAdapter
 import com.example.onlinemarketproject.adapter.RecyclerViewProductAdapter
 import com.example.onlinemarketproject.databinding.FragmentCategoryBinding
 import com.example.onlinemarketproject.viewmodels.CategoryViewModel
@@ -60,9 +59,9 @@ class CategoryFragment : Fragment() {
 
     private fun setlistProduct() {
         viewModel.getProductItem()
-        viewModel.getPopularList()
+        viewModel.getElectronicList()
         viewModel.getRecentList()
-        viewModel.getTopList()
+        viewModel.getMenList()
         viewModel.getWomanList()
         attachPopularOnScrollListener()
         attachRecentOnScrollListener()
@@ -88,7 +87,7 @@ class CategoryFragment : Fragment() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
                 if (!recyclerView.canScrollVertically(1) && dy != 0) {
-                    viewModel.getPopularList()
+                    viewModel.getElectronicList()
                 }
             }
         })
@@ -100,7 +99,7 @@ class CategoryFragment : Fragment() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
                 if (!recyclerView.canScrollVertically(1) && dy != 0) {
-                    viewModel.getTopList()
+                    viewModel.getMenList()
                 }
             }
         })

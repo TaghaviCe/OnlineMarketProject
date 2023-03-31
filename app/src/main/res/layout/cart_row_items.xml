@@ -17,12 +17,9 @@
             name="productImageSrc"
             type="String" />
 
-
         <variable
             name="productQuantity"
             type="String" />
-
-
 
     </data>
 

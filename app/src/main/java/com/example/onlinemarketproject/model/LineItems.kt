@@ -16,7 +16,7 @@ data class LineItems(
     @Json(name = "title")
     val title: String,
     @Json(name = "quantity")
-    val quantity: Int,
+    var quantity: Int,
     @Json(name = "pricePerItem")
     val pricePerItem: Double,
 )

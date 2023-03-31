@@ -10,23 +10,26 @@ import com.example.onlinemarketproject.databinding.CartRowItemsBinding
 import com.example.onlinemarketproject.model.LineItems
 import com.example.onlinemarketproject.model.productItemX
 import com.example.onlinemarketproject.repositories.ProductRepository
-
-class RecyclerViewCardAdapter() :
+typealias chooseProductCart = (Int) -> Unit
+class RecyclerViewCardAdapter(var onProductClick: chooseProductCart) :
     ListAdapter<LineItems, RecyclerViewCardAdapter.MainViewHolder>(DiffCallback) {
 
     inner class MainViewHolder(private var binding: CartRowItemsBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        var productRepository=ProductRepository()
+
         fun bind(lineItems: LineItems) {
             Glide.with(binding.imageProduct)
                 .load(lineItems.image)
                 .into(binding.imageProduct)
             binding.productName=lineItems.title.toString()
               binding.productPrice=lineItems.price.toString()
-//            binding.productImageSrc = productItemX.images?.get(0)?.src.toString()
-//            binding.productName = productItemX.name
-//            binding.price = productItemX.price
+            binding.button3.setOnClickListener {
+                onProductClick(lineItems.id)
+//                notifyItemRemoved(lineItems.id)
+                notifyDataSetChanged()
+            }
             binding.executePendingBindings()
+          //  binding.root.setOnClickListener { onProductClick(lineItems.id) }
 
         }
 

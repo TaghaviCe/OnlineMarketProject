@@ -12,8 +12,9 @@ import kotlinx.coroutines.launch
 
 class CartViewModel:ViewModel() {
     var status= MutableLiveData<Status>()
-    var oneProduct= arrayListOf<productItemX>()
+    var oneProduct= MutableLiveData<productItemX>()
     var productList=MutableLiveData<List<LineItems?>>()
+
 
     fun getListPref(orderItem: List<LineItems>){
         viewModelScope.launch {
@@ -28,6 +29,22 @@ class CartViewModel:ViewModel() {
             }
         }
 
+    }
+
+    fun getProductWithId(id : Int):productItemX?{
+        val productRepository= ProductRepository()
+        viewModelScope.launch {
+            status.value = Status.LOADING
+            try {
+                oneProduct.value=productRepository.getProductWithId(id)
+                status.value = Status.DONE
+
+            } catch (e: Exception) {
+                status.value=Status.ERROR
+
+            }
+        }
+        return oneProduct.value
 
     }
 }

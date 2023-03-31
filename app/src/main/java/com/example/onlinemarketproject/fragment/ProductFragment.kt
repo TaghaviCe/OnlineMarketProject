@@ -49,32 +49,6 @@ class ProductFragment : Fragment() {
                 addItem(newProduct)
             }
 
-//                if (newProduct != null) {
-//                    myPreference.addItem(newProduct)
-//                    binding.button4.setBackgroundColor(Color.WHITE)
-//                }
- //              var shaoppingCartItem:SharedPreferences=requireActivity().getSharedPreferences("cartClient",Context.MODE_PRIVATE)
-//                var editor=shaoppingCartItem.edit()
-//                var gson=Gson()
-//                var list =gson.fromJson(shaoppingCartItem.getString("listOfId",""), arrayListOf<String>()::class.java)
-//                if(list.isNullOrEmpty()){
-//                    var listToJson=gson.toJson(arrayListOf(id))
-//                    editor.putString("listOfId",listToJson)
-//                    editor.apply()
-//                }else{
-//                    list.add(id.toString())
-//                    var listToJson=gson.toJson(list)
-//                    editor.putString("listOfId",listToJson)
-//                    editor.apply()
-//                }
-
-
-
-
-//        } catch (e: Exception){
-//            Toast.makeText(context, "error", Toast.LENGTH_LONG)
-//
-//        }
     }
 
 
@@ -98,8 +72,6 @@ class ProductFragment : Fragment() {
                     quantity = productItemX.rating.rate.toInt(),
                     price = productItemX.price.toString(),
                     id = productItemX.id.toInt()
-
-
 
                 )
             )

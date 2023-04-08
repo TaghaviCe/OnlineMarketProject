@@ -17,18 +17,11 @@ and...
 
 
 
-
-<table>
-  <tr>
-    <td>home page</td>
-     <td>search</td>
-     <td>login</td>
-  </tr>
-  <tr>
-    <td><img src="[![login.png](https://i.postimg.cc/XNQdyknX/login.png)](https://postimg.cc/YjLh5gGw)" width=270 height=480></td>
-    <td><img src="[![home.png](https://i.postimg.cc/k4tMX9Mx/home.png)](https://postimg.cc/MMqJdCQT)" width=270 height=480></td>
-    <td><img src="[![search.png](https://i.postimg.cc/ncnxNqmK/search.png)](https://postimg.cc/NLCZH9pL)" width=270 height=480></td>
-  </tr>
- </table>
+| First Header  | Second Header |
+| ------------- | ------------- |
+| ![login](https://user-images.githubusercontent.com/80774755/230722210-b2e6024d-fc16-418b-a21d-605e34c79855.png)
+  |![home](https://user-images.githubusercontent.com/80774755/230722219-8d4e6432-7033-4873-86d8-b9743c61048e.png)
+  |
+| Content Cell  | Content Cell  |
  
  

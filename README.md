@@ -16,6 +16,8 @@ sharedPreference,
 and...
 
 
-![777777](https://user-images.githubusercontent.com/80774755/230722332-33202352-6610-41c1-b5b7-dd7c6302044a.png)
+![6600](https://user-images.githubusercontent.com/80774755/230722563-6bd7bbc7-b36b-4d8d-a70a-17031bc25da2.png)
+
+![7700](https://user-images.githubusercontent.com/80774755/230722576-3a52faa7-170e-43fd-a316-91d770898b38.png)
 
  

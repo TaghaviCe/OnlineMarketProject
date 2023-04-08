@@ -15,6 +15,9 @@ navigation,
 sharedPreference,
 and...
 
+![home](https://user-images.githubusercontent.com/80774755/230721289-9b1604e2-9157-4ed7-9fc5-477393c9d571.png)![category](https://user-images.githubusercontent.com/80774755/230721307-05a8d34c-8b28-4392-9c8a-602189b57fe0.png)
+
+
 <table>
   <tr>
     <td>First Screen Page</td>

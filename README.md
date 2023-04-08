@@ -13,7 +13,8 @@ adapterBinding,
 RecyclerView,
 navigation,
 sharedPreference,
-and...
+and...![all product](https://user-images.githubusercontent.com/80774755/230721122-133b6c85-7aab-46dc-9b62-58f426858c90.png)
+
 <table>
   <tr>
     <td>First Screen Page</td>
@@ -21,7 +22,7 @@ and...
      <td>Present day in purple and selected day in pink</td>
   </tr>
   <tr>
-    <td><img src="![all product](https://user-images.githubusercontent.com/80774755/230720846-1de24033-ba9c-483d-a1f8-5df9fb48aa6c.png)
+    <td><img src="![home](https://user-images.githubusercontent.com/80774755/230721245-c43b8bdc-ae6e-4b26-83b5-aa6185ca5f17.png)
 " width=270 height=480></td>
     <td><img src="![category](https://user-images.githubusercontent.com/80774755/230720859-570db76c-0b5c-4af6-a756-5008f8918f56.png)
 " width=270 height=480></td>

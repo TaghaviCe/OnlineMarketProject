@@ -16,10 +16,6 @@ sharedPreference,
 and...
 
 
-| First Header  | Second Header |
-| ------------- | ------------- |
-| ![home](https://user-images.githubusercontent.com/80774755/230722279-918b374a-7e0c-4eae-bab4-ee80ea5d3daf.png)
-  | ![login](https://user-images.githubusercontent.com/80774755/230722267-cbc6b643-2f99-496f-aaa3-91c635e82d3f.png)
-  |
-| Content Cell  | Content Cell  |
+![777777](https://user-images.githubusercontent.com/80774755/230722332-33202352-6610-41c1-b5b7-dd7c6302044a.png)
+
  

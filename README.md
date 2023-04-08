@@ -13,7 +13,7 @@ adapterBinding,
 RecyclerView,
 navigation,
 sharedPreference,
-and...![all product](https://user-images.githubusercontent.com/80774755/230721122-133b6c85-7aab-46dc-9b62-58f426858c90.png)
+and...
 
 <table>
   <tr>

@@ -25,11 +25,14 @@ and...
      <td>Present day in purple and selected day in pink</td>
   </tr>
   <tr>
-    <td><img src="![home](https://user-images.githubusercontent.com/80774755/230721245-c43b8bdc-ae6e-4b26-83b5-aa6185ca5f17.png)
+    <td><img src="![icons8-check-mark-button-48](https://user-images.githubusercontent.com/80774755/230721584-fe3a1e44-04b0-4e19-8200-8ba9f26128b6.png)
+
 " width=270 height=480></td>
-    <td><img src="![category](https://user-images.githubusercontent.com/80774755/230720859-570db76c-0b5c-4af6-a756-5008f8918f56.png)
+    <td><img src="![icons8-kotlin-a-cross-platform,-statically-typed,-general-purpose-programming-language-with-type-inference-24](https://user-images.githubusercontent.com/80774755/230721595-fd7310f8-b0de-4833-aa6a-10e089bccc9b.png)
+
 " width=270 height=480></td>
-    <td><img src="![shopping cart](https://user-images.githubusercontent.com/80774755/230720879-4c65d47c-1cad-4461-b7da-e22afad2653b.png)
+    <td><img src="![icons8-mail-24](https://user-images.githubusercontent.com/80774755/230721601-ab720a2b-918f-4312-af2b-bae2878a7644.png)
+
 " width=270 height=480></td>
   </tr>
  </table>

@@ -29,13 +29,13 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <SearchView
-                    android:id="@+id/searchView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:iconifiedByDefault="false"
-                    android:queryHint="Search Here" />
+<!--                <SearchView-->
+<!--                    android:id="@+id/searchView"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentTop="true"-->
+<!--                    android:iconifiedByDefault="false"-->
+<!--                    android:queryHint="Search Here" />-->
 
                 <TextView
                     android:id="@+id/product_electronics"

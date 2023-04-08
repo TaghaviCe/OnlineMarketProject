@@ -37,8 +37,8 @@
                     android:id="@+id/textView5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="سبد خرید شما:"
-                    android:textSize="20dp"
+                    android:text="@string/your_shopping_cart"
+                    android:textSize="20sp"
                     android:textColor="@color/black"
                     android:textAlignment="center" />
 
@@ -68,6 +68,7 @@
                         android:layout_gravity="center"
                         android:layout_margin="8dp"
                         android:layout_weight="1"
+                        android:text="@{CartViewModel.totalPrice.toString()}"
                         android:background="@color/white"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
@@ -79,7 +80,7 @@
                         android:layout_weight="1"
                         android:id="@+id/button_cart"
                         android:backgroundTint="@color/black"
-                        android:text="ثبت سفارش"
+                        android:text="@string/order"
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         android:textStyle="bold" />

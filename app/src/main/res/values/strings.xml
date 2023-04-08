@@ -17,4 +17,6 @@
     <string name="category">category</string>
     <string name="shopping_cart">shopping cart</string>
     <string name="welcome_text">Welcome to OnlineMarket</string>
+    <string name="order">Order</string>
+    <string name="your_shopping_cart">your shopping cart:</string>
 </resources>

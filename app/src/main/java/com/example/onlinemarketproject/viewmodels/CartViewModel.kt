@@ -14,6 +14,7 @@ class CartViewModel:ViewModel() {
     var status= MutableLiveData<Status>()
     var oneProduct= MutableLiveData<productItemX>()
     var productList=MutableLiveData<List<LineItems?>>()
+    var totalPrice= MutableLiveData<Double>(0.0)
 
 
     fun getListPref(orderItem: List<LineItems>){
@@ -21,6 +22,11 @@ class CartViewModel:ViewModel() {
             try{
                 productList.value=orderItem
                 status.value = Status.DONE
+                var sum=0.0
+                for(i in orderItem){
+                    sum+=i.pricePerItem
+                }
+                totalPrice.value=sum
 
             }catch (e: Exception){
                 status.value = Status.ERROR
@@ -30,6 +36,8 @@ class CartViewModel:ViewModel() {
         }
 
     }
+
+
 
     fun getProductWithId(id : Int):productItemX?{
         val productRepository= ProductRepository()
